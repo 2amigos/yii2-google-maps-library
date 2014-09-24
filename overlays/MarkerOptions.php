@@ -58,8 +58,15 @@ class MarkerOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'anchorPoint' => null,
@@ -80,10 +87,13 @@ class MarkerOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
+    /**
+     * Sets the map option attribute.
+     *
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);
@@ -110,6 +120,11 @@ class MarkerOptions extends ObjectAbstract
         $this->options['anchorPoint'] = $point;
     }
 
+    /**
+     * Sets the marker shape.
+     *
+     * @param MarkerShape $shape
+     */
     public function setShape(MarkerShape $shape)
     {
         $this->options['shape'] = $shape;

@@ -51,8 +51,15 @@ use yii\web\JsExpression;
  */
 class Symbol extends ObjectAbstract
 {
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'anchor' => null,
@@ -67,8 +74,6 @@ class Symbol extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
     /**

@@ -44,11 +44,22 @@ class GroundOverlay extends CircleOptions
         }
     }
 
+
+    /**
+     * Sets the [OverlayGround] bounds.
+     *
+     * @param LatLngBounds $value
+     */
     public function setBounds(LatLngBounds $value)
     {
         $this->_bounds = $value;
     }
 
+    /**
+     * Returns the [OverlayGround] bounds.
+     *
+     * @return LatLngBounds
+     */
     public function getBounds()
     {
         return $this->_bounds;

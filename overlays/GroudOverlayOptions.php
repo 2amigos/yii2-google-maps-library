@@ -29,8 +29,14 @@ class GroundOverlayOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'clickable' => null,
@@ -39,10 +45,11 @@ class GroundOverlayOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
+    /**
+     * @param $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);

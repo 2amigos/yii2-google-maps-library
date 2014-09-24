@@ -41,6 +41,11 @@ class MarkerShape extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
         $this->options = ArrayHelper::merge(
@@ -53,6 +58,7 @@ class MarkerShape extends ObjectAbstract
 
         parent::__construct($config);
     }
+
     /**
      * @inheritdoc
      * @throws \yii\base\InvalidConfigException

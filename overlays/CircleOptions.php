@@ -45,8 +45,14 @@ class CircleOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'center' => null,
@@ -66,15 +72,25 @@ class CircleOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
+    /**
+     * Sets the map name making sure is not going to be converted into a js string.
+     *
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);
     }
 
+    /**
+     * Sets strokePosition option property.
+     *
+     * @param $value
+     *
+     * @throws \yii\base\InvalidConfigException
+     */
     public function setStrokePosition($value)
     {
         if (!StrokePosition::getIsValid($value)) {

@@ -109,10 +109,7 @@ class Marker extends MarkerOptions
     {
         return $this->position instanceof LatLng && $this->position->isInBounds($bounds);
     }
-public function getCenterOfBounds()
-{
-    return $this->position;
-}
+
     /**
      * Returns the center coordinates of an array of Markers
      *

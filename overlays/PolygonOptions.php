@@ -52,8 +52,15 @@ class PolygonOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'clickable' => null,
@@ -73,10 +80,13 @@ class PolygonOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
+    /**
+     * Sets the map option property.
+     *
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);
@@ -86,6 +96,7 @@ class PolygonOptions extends ObjectAbstract
      * Adds a coordinate to the path array
      *
      * @param LatLng $coord
+     *
      * @return $this
      */
     public function addCoord(LatLng $coord)

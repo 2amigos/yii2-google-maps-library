@@ -44,8 +44,14 @@ class RectangleOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'bounds' => null,
@@ -64,15 +70,25 @@ class RectangleOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
+    /**
+     * Sets the map name of the option attribute.
+     *
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);
     }
 
+    /**
+     * Sets the stroke position
+     *
+     * @param $value
+     *
+     * @throws \yii\base\InvalidConfigException
+     */
     public function setStrokePosition($value)
     {
         if (!StrokePosition::getIsValid($value)) {

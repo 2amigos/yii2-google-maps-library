@@ -53,6 +53,8 @@ class IconSequence extends ObjectAbstract
     }
 
     /**
+     * Sets the path of the [IconSequence]
+     *
      * @param $value
      *
      * @throws \yii\base\InvalidConfigException

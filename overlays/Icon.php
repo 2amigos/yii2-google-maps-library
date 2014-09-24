@@ -33,8 +33,15 @@ use yii\helpers\ArrayHelper;
  */
 class Icon extends ObjectAbstract
 {
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'anchor' => null,
@@ -45,8 +52,6 @@ class Icon extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
     /**

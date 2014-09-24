@@ -47,8 +47,15 @@ class PolylineOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'clickable' => null,
@@ -67,16 +74,12 @@ class PolylineOptions extends ObjectAbstract
             $this->options
         );
 
-        parent::__construct($config);
-    }
 
-    public function setMap($value)
-    {
-        $this->options['map'] = new JsExpression($value);
     }
 
     /**
      * Adds an IconSequence
+     *
      * @param IconSequence $icon
      */
     public function addIcon(IconSequence $icon)
