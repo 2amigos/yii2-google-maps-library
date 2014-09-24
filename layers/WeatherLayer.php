@@ -9,8 +9,22 @@ namespace dosamigos\google\maps\layers;
 
 use yii\base\InvalidConfigException;
 
+/**
+ * WeatherLayer
+ *
+ * Renders a layer that displays weather icons.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps\layers
+ */
 class WeatherLayer extends WeatherLayerOptions
 {
+    /**
+     * @inheritdoc
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         if ($this->map == null) {
@@ -18,6 +32,11 @@ class WeatherLayer extends WeatherLayerOptions
         }
     }
 
+    /**
+     * Returns the required javascript code to initialize the object.
+     *
+     * @return string
+     */
     public function getJs()
     {
         $name = $this->getName();

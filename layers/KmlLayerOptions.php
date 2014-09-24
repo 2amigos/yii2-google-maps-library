@@ -35,6 +35,10 @@ class KmlLayerOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     public function __construct($config = [])
     {
         parent::__construct($config);
@@ -53,6 +57,11 @@ class KmlLayerOptions extends ObjectAbstract
         );
     }
 
+    /**
+     * Sets the map, making sure is not going to be converted into a js string.
+     *
+     * @param $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);

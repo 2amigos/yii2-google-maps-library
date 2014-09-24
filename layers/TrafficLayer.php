@@ -6,6 +6,16 @@
  */
 namespace dosamigos\google\maps\layers;
 
+/**
+ * TrafficLayer
+ *
+ * Adds a traffic layer to your maps.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps\layers
+ */
 class TrafficLayer extends Layer
 {
 } 

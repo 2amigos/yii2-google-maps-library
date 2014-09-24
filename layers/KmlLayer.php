@@ -23,8 +23,12 @@ use yii\base\InvalidConfigException;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\layers
  */
-class KmlLayer extends WeatherLayerOptions
+class KmlLayer extends KmlLayerOptions
 {
+    /**
+     * @inheritdoc
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         if ($this->map == null) {
@@ -32,6 +36,11 @@ class KmlLayer extends WeatherLayerOptions
         }
     }
 
+    /**
+     * Returns the required initialization javascript code
+     *
+     * @return string
+     */
     public function getJs()
     {
         $name = $this->getName();

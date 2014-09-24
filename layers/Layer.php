@@ -10,10 +10,27 @@ namespace dosamigos\google\maps\layers;
 use dosamigos\google\maps\ObjectAbstract;
 use yii\base\InvalidConfigException;
 
-class Layer extends ObjectAbstract {
+/**
+ * Layer
+ *
+ * Base class where all layers extend from.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps\layers
+ */
+class Layer extends ObjectAbstract
+{
 
+    /**
+     * @var string the map name
+     */
     public $map;
 
+    /**
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         if ($this->map == null) {
