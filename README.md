@@ -3,6 +3,8 @@ yii2-google-maps-library
 
 Google Maps API library for Yii2
 
+[![Latest Stable Version](https://poser.pugx.org/2amigos/yii2-google-maps-library/v/stable.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![Total Downloads](https://poser.pugx.org/2amigos/yii2-google-maps-library/downloads.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![Latest Unstable Version](https://poser.pugx.org/2amigos/yii2-google-maps-library/v/unstable.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![License](https://poser.pugx.org/2amigos/yii2-google-maps-library/license.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library)
+
 Introduction
 ------------
 Even though we already created an extension to display maps that are away from Google's policies and works with
