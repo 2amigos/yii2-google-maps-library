@@ -11,8 +11,10 @@ use dosamigos\google\maps\LatLng;
 use yii\base\InvalidConfigException;
 
 /**
- * Class StreetViewPanorama
+ * StreetViewPanorama
  *
+ * Displays the panorama for a given LatLng or panorama ID. A StreetViewPanorama object provides a Street View "viewer"
+ * which can be stand-alone within a separate <div> or bound to a Map.
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
@@ -22,11 +24,19 @@ use yii\base\InvalidConfigException;
 class StreetViewPanorama extends StreetViewPanoramaOptions
 {
 
+    /**
+     * @var string the HTML element id where to render the street panorama. Avoid the use of '#'
+     * (jquery element selector)
+     */
     public $nodeId;
 
+    /**
+     * @inheritdoc
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
-        if($this->nodeId == null) {
+        if ($this->nodeId == null) {
             throw new InvalidConfigException('"nodeId" cannot be null');
         }
     }
@@ -51,7 +61,8 @@ class StreetViewPanorama extends StreetViewPanoramaOptions
 
         $js = [];
 
-        $js[] = "var {$this->getName()} = new google.maps.StreetViewPanorama(document.getElementById('{$this->nodeId}',{$this->getEncodedOptions()});";
+        $js[] = "var {$this->getName()} = " .
+            "new google.maps.StreetViewPanorama(document.getElementById('{$this->nodeId}',{$this->getEncodedOptions()});";
 
         foreach ($this->events as $event) {
             /** @var \dosamigos\google\maps\Event $event */

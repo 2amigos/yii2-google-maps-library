@@ -13,10 +13,24 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\web\JsExpression;
 
+/**
+ * StreetViewAddressControlOptions
+ *
+ * Options for the rendering of the Street View address control.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps\services
+ */
 class StreetViewAddressControlOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     function __construct($config = [])
     {
         $this->options = ArrayHelper::merge([
@@ -26,6 +40,13 @@ class StreetViewAddressControlOptions extends ObjectAbstract
         parent::__construct($config);
     }
 
+    /**
+     * Sets the position of the control.
+     *
+     * @param $value
+     *
+     * @throws \yii\base\InvalidConfigException
+     */
     public function setPosition($value)
     {
         if (!ControlPosition::getIsValid($value)) {

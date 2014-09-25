@@ -13,7 +13,9 @@ use dosamigos\google\maps\OptionsTrait;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class StreetViewPanoramaOptions
+ * StreetViewPanoramaOptions
+ *
+ * Options defining the properties of a [StreetViewPanorama] object.
  *
  * @property boolean addressControl The enabled/disabled state of the address control.
  * @property StreetViewAddressControlOptions addressControlOptions The display options for the address control.
@@ -44,8 +46,15 @@ class StreetViewPanoramaOptions extends ObjectAbstract
 {
     use OptionsTrait;
 
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     function __construct($config = [])
     {
+        parent::__construct($config);
+
         $this->options = ArrayHelper::merge(
             [
                 'addressControl' => null,
@@ -68,8 +77,6 @@ class StreetViewPanoramaOptions extends ObjectAbstract
             ],
             $this->options
         );
-
-        parent::__construct($config);
     }
 
     /**
@@ -82,17 +89,33 @@ class StreetViewPanoramaOptions extends ObjectAbstract
         $this->options['position'] = $coord;
     }
 
+    /**
+     * Sets the pan control options.
+     *
+     * @param PanControlOptions $options
+     */
     public function setPanControlOptions(PanControlOptions $options)
     {
         $this->options['panControlOptions'] = $options;
     }
 
+    /**
+     * Sets the camera orientation, specified as heading and pitch, for the panorama.
+     *
+     * @param StreetViewPov $pov
+     */
     public function setPov(StreetViewPov $pov)
     {
         $this->options['pov'] = $pov;
     }
 
-    public function setAddressControlOptions(StreetViewAddressControlOptions $options) {
+    /**
+     * Sets the address control options.
+     *
+     * @param StreetViewAddressControlOptions $options
+     */
+    public function setAddressControlOptions(StreetViewAddressControlOptions $options)
+    {
         $this->options['addressControlOptions'] = $options;
     }
 } 

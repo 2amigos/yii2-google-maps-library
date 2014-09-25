@@ -49,7 +49,11 @@ use yii\web\JsExpression;
  */
 class DirectionsRequest extends ObjectAbstract
 {
-
+    /**
+     * @inheritdoc
+     *
+     * @param array $config
+     */
     public function __construct($config = [])
     {
         $this->options = ArrayHelper::merge(
@@ -64,7 +68,7 @@ class DirectionsRequest extends ObjectAbstract
                 'provideRouteAlternatives' => null,
                 'region' => null,
                 'transitOptions' => null,
-                'travelMode' => DirectionsTravelMode::DRIVING,
+                'travelMode' => TravelMode::DRIVING,
                 'unitSystem' => null,
                 'waypoints' => null,
             ],
@@ -104,18 +108,35 @@ class DirectionsRequest extends ObjectAbstract
         $this->options['destination'] = $destination;
     }
 
-    public function setTravelMode($value) {
+    /**
+     * Sets the travelMode
+     *
+     * @param string $value
+     *
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function setTravelMode($value)
+    {
+        if (!TravelMode::getIsValid($value)) {
+            throw new InvalidConfigException('Invalid "travelMode" value');
+        }
         $this->options['travelMode'] = new JsExpression($value);
     }
 
-    public function setWayPoints(array $wayPoints) {
+    /**
+     * Sets the directions wayPoints. Please, check the maximum allowed way points (without premier is 8)
+     *
+     * @param array $wayPoints
+     */
+    public function setWayPoints(array $wayPoints)
+    {
         $values = [];
-        foreach($wayPoints as $wayPoint) {
+        foreach ($wayPoints as $wayPoint) {
             /** @var DirectionsWayPoint $wayPoint */
-            if($wayPoint instanceof DirectionsWayPoint) {
+            if ($wayPoint instanceof DirectionsWayPoint) {
                 $values[] = new JsExpression($wayPoint->getJs());
             }
-            if($wayPoint instanceof JsExpression) {
+            if ($wayPoint instanceof JsExpression) {
                 $values[] = $wayPoint;
             }
         }
@@ -129,9 +150,5 @@ class DirectionsRequest extends ObjectAbstract
     public function getJs()
     {
         return "var {$this->getName()} = {$this->getEncodedOptions()};";
-    }
-
-    public function request() {
-
     }
 } 

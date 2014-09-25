@@ -49,6 +49,10 @@ use yii\web\JsExpression;
  */
 class DirectionsRenderer extends ObjectAbstract
 {
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
     public function __construct($config = [])
     {
         $this->options = ArrayHelper::merge(
@@ -73,6 +77,10 @@ class DirectionsRenderer extends ObjectAbstract
         return parent::__construct($config);
     }
 
+    /**
+     * Sets the map option attribute
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);

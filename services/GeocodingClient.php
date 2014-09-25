@@ -26,9 +26,13 @@ use Yii;
  */
 class GeocodingClient extends ClientAbstract
 {
-    public function init()
+    /**
+     * @inheritdoc
+     * @param array $config
+     */
+    public function __construct($config = [])
     {
-        parent::init();
+        parent::__construct($config);
 
         $this->params = ArrayHelper::merge(
             [

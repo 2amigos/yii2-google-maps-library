@@ -7,8 +7,8 @@
 namespace dosamigos\google\maps;
 
 use Yii;
-use GuzzleHttp\Exception\RequestException;
 use yii\base\Object;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client as HttpClient;
 
 abstract class ClientAbstract extends Object

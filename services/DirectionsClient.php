@@ -25,10 +25,11 @@ class DirectionsClient extends ClientAbstract
 {
     /**
      * @inheritdoc
+     * @param array $config
      */
-    public function init()
+    public function __construct($config = [])
     {
-        parent::init();
+        parent::__construct($config);
 
         $this->params = ArrayHelper::merge(
             [
