@@ -21,8 +21,20 @@ impatient. If you do, any help will be highly appreciated.
 
 ##Installation
 
-For now, you will have to [clone the repository](https://github.com/2amigos/yii2-google-maps-library) until we feel is
-the right time to publish it to Packagist.
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
+
+```
+php composer.phar require "2amigos/yii2-google-maps-library" "*"
+```
+or add
+
+```json
+"2amigos/yii2-google-maps-library" : "*"
+```
+
+to the require section of your application's `composer.json` file.
 
 ##Usage
 
