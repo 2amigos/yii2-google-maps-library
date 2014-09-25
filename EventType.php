@@ -6,7 +6,16 @@
  */
 namespace dosamigos\google\maps;
 
-
+/**
+ * EventType
+ *
+ * Describes the different valid event types supported.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class EventType
 {
     const DEFAULT_EVENT = 'DEFAULT';
@@ -14,6 +23,13 @@ class EventType
     const DOM = 'DOM';
     const DOM_ONCE = 'DOM_ONCE';
 
+    /**
+     * Checks whether value is a valid [EventType] constant.
+     *
+     * @param $value
+     *
+     * @return bool
+     */
     public static function getIsValid($value)
     {
         return in_array(

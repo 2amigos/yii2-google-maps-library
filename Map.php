@@ -35,7 +35,8 @@ use yii\helpers\ArrayHelper;
  * shortcuts are enabled by default.
  * @property boolean mapMaker True if Map Maker tiles should be used instead of regular tiles.
  * @property boolean mapTypeControl The initial enabled/disabled state of the Map type control.
- * @property MapTypeControlOptions mapTypeControlOptions The initial display options for the Map type control.
+ * @property [\doamigos\maps\controls\MapTypeControlOptions] mapTypeControlOptions The initial display options for the
+ * Map type control.
  * @property string mapTypeId The initial Map mapTypeId. Defaults to [MapTypeId::ROADMAP].
  * @property int maxZoom The maximum zoom level which will be displayed on the map. If omitted, or set to null,
  * the maximum zoom from the current map type is used instead.
@@ -43,22 +44,25 @@ use yii\helpers\ArrayHelper;
  * the minimum zoom from the current map type is used instead.
  * @property boolean noClearIf true, do not clear the contents of the Map div.
  * @property boolean overviewMapControlThe enabled/disabled state of the Overview Map control.
- * @property OverViewMapControlOptions overviewMapControlOptions The display options for the Overview Map control.
+ * @property [\doamigos\maps\controls\OverViewMapControlOptions] overviewMapControlOptions The display options for the
+ * Overview Map control.
  * @property boolean panControlThe enabled/disabled state of the Pan control.
- * @property PanControlOptions panControlOptions anControlOptions    The display options for the Pan control.
+ * @property[\doamigos\maps\controls\PanControlOptions] panControlOptions The display options for the Pan control.
  * @property boolean rotateControlThe enabled/disabled state of the Rotate control.
  * @property RotateControlOptions rotateControlOptions The display options for the Rotate control.
  * @property boolean scaleControlThe initial enabled/disabled state of the Scale control.
- * @property ScaleControlOptions scaleControlOptions The initial display options for the Scale control.
+ * @property [\doamigos\maps\controls\ScaleControlOptions] scaleControlOptions The initial display
+ * options for the Scale control.
  * @property boolean scrollwheel If false, disables scrollwheel zooming on the map. The scrollwheel is enabled by
  * default.
- * @property StreetViewPanorama streetView A StreetViewPanorama to display when the Street View pegman is dropped on
+ * @property [\doamigos\maps\services\StreetViewPanorama] streetView A StreetViewPanorama to display when the Street
+ * View pegman is dropped on
  * the map. If no panorama is specified, a default StreetViewPanorama will be displayed in the map's div when the pegman
  * is dropped.
  * @property boolean streetViewControlThe initial enabled/disabled state of the Street View Pegman control. This control
  * is part of the default UI, and should be set to false when displaying a map type on which the Street View road overlay
  * should not appear (e.g. a non-Earth map type).
- * @property StreetViewControlOptions streetViewControlOptions    StreetViewControlOptions    The initial display options
+ * @property [\doamigos\maps\controls\StreetViewControlOptions] streetViewControlOptions The initial display options
  * for the Street View Pegman control.
  * @property array styles Styles to apply to each of the default map types. Note that for Satellite/Hybrid and Terrain
  * modes, these styles will only apply to labels and geometry.
@@ -71,7 +75,7 @@ use yii\helpers\ArrayHelper;
  * this option refer to different things, do not bind() the tilt property; doing so may yield unpredictable effects.
  * @property int zoom The initial Map zoom level. Required.
  * @property boolean zoomControlThe enabled/disabled state of the Zoom control.
- * @property ZoomControlOptions zoomControlOptions The display options for the Zoom control.
+ * @property [\doamigos\maps\controls\ZoomControlOptions] zoomControlOptions The display options for the Zoom control.
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
@@ -80,18 +84,38 @@ use yii\helpers\ArrayHelper;
  */
 class Map extends ObjectAbstract
 {
+    /**
+     * @var int the width in pixels or percent of the container holding the map.
+     */
     public $width = 512;
+    /**
+     * @var int the height in pixels or percent of the container holding the map.
+     */
     public $height = 512;
+    /**
+     * @var array the HTML attributes for the layer that will render the map.
+     */
     public $containerOptions = [];
-
+    /**
+     * @var array stores the overlays that are going to be rendered on the map.
+     */
     private $_overlays = [];
+    /**
+     * @var array stores closure scope variables. Global to the js module written.
+     */
     private $_closure_scope_variables = [];
+    /**
+     * @var array stores javascript code that is going to be rendered together with script initialization
+     */
     private $_js = [];
     /**
-     * @var PluginManager
+     * @var PluginManager that manages the active plugins activated for the map.
      */
     private $_plugins;
 
+    /**
+     * @param array $config
+     */
     public function __construct($config = [])
     {
         $this->options = ArrayHelper::merge(
@@ -135,6 +159,9 @@ class Map extends ObjectAbstract
         parent::__construct($config);
     }
 
+    /**
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         if ($this->center == null || $this->zoom == null) {
@@ -144,17 +171,31 @@ class Map extends ObjectAbstract
         $this->_plugins = new PluginManager();
     }
 
+    /**
+     * @param $overlay
+     *
+     * @return $this
+     */
     public function addOverlay($overlay)
     {
         $this->_overlays[] = $overlay;
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getOverlays()
     {
         return $this->_overlays;
     }
 
+    /**
+     * @param int $margin
+     * @param int $default
+     *
+     * @return int
+     */
     public function getMarkersFittingZoom($margin = 0, $default = 14)
     {
         $markers = $this->getMarkers();
@@ -164,11 +205,17 @@ class Map extends ObjectAbstract
 
     }
 
+    /**
+     * @return LatLng|null
+     */
     public function getMarkersCenterCoordinates()
     {
         return Marker::getCenterOfMarkers($this->getMarkers());
     }
 
+    /**
+     * @return string
+     */
     public function getMarkersForUrl()
     {
         $coords = [];
@@ -181,6 +228,9 @@ class Map extends ObjectAbstract
     }
 
 
+    /**
+     * @return array
+     */
     public function getMarkers()
     {
         $markers = [];
@@ -192,36 +242,60 @@ class Map extends ObjectAbstract
         return $markers;
     }
 
+    /**
+     * @return LatLngBounds
+     */
     public function getBoundsFromCenterAndZoom()
     {
         return LatLngBounds::getBoundsFromCenterAndZoom($this->center, $this->zoom, $this->with, $this->height);
     }
 
+    /**
+     * @param LatLng $coord
+     */
     public function setCenter(LatLng $coord)
     {
         $this->options['center'] = $coord;
     }
 
+    /**
+     * @return mixed
+     */
     public function getCenter()
     {
         return ArrayHelper::getValue($this->options, 'center');
     }
 
+    /**
+     * @param $name
+     * @param null $value
+     */
     public function setClosureScopedVariable($name, $value = null)
     {
         $this->_closure_scope_variables[$name] = $value;
     }
 
+    /**
+     * @param $name
+     *
+     * @return mixed
+     */
     public function getClosureScopedVariable($name)
     {
         return ArrayHelper::getValue($this->_closure_scope_variables, $name);
     }
 
+    /**
+     * @return array
+     */
     public function getClosureScopedVariables()
     {
         return $this->_closure_scope_variables;
     }
 
+    /**
+     * @return string
+     */
     protected function getClosureScopedVariablesScript()
     {
         $js = [];
@@ -237,6 +311,12 @@ class Map extends ObjectAbstract
         return implode("\n", $js);
     }
 
+    /**
+     * @param string $maptype
+     * @param string $hl
+     *
+     * @return string
+     */
     public function getStaticMapUrl($maptype = 'mobile', $hl = 'es')
     {
         $params = [
@@ -254,6 +334,9 @@ class Map extends ObjectAbstract
         return 'http://maps.google.com/staticmap?' . $params;
     }
 
+    /**
+     * @return string
+     */
     public function display()
     {
         $this->registerClientScript();
@@ -261,6 +344,9 @@ class Map extends ObjectAbstract
         return $this->renderContainer();
     }
 
+    /**
+     * @return string
+     */
     public function renderContainer()
     {
         $this->containerOptions['id'] = ArrayHelper::getValue(
@@ -272,6 +358,9 @@ class Map extends ObjectAbstract
         return Html::tag('div', '', $this->containerOptions);
     }
 
+    /**
+     * @param int $position
+     */
     public function registerClientScript($position = View::POS_END)
     {
         $view = Yii::$app->getView();
@@ -280,6 +369,11 @@ class Map extends ObjectAbstract
         $view->registerJs($this->getJs(), $position);
     }
 
+    /**
+     * @param $js
+     *
+     * @return $this
+     */
     public function appendScript($js)
     {
         $this->_js[] = $js;
@@ -287,6 +381,9 @@ class Map extends ObjectAbstract
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getJs()
     {
         $name = $this->getName();

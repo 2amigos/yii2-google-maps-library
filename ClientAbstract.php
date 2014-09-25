@@ -11,6 +11,16 @@ use yii\base\Object;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client as HttpClient;
 
+/**
+ * ClientAbstract
+ *
+ * Base class for those objects that make requests to the Google Web Services API
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 abstract class ClientAbstract extends Object
 {
     /**

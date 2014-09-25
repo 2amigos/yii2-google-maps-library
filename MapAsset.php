@@ -9,8 +9,21 @@ namespace dosamigos\google\maps;
 use Yii;
 use yii\web\AssetBundle;
 
+/**
+ * MapAsset
+ *
+ * Registers the google maps api
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class MapAsset extends AssetBundle
 {
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         // To configure please, add `googleMapsApiKey` parameter to your application configuration

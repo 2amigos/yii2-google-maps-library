@@ -6,7 +6,17 @@
  */
 namespace dosamigos\google\maps;
 
-
+/**
+ * Encoder
+ *
+ * Encodes paths of polylines. Based on Mark McClure's Javascript PolylineEncoder
+ * Jim Hribar's PHP version and Matthias Bauer PHP class
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class Encoder
 {
     private $numLevels = 18;
