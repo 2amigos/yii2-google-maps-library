@@ -8,9 +8,23 @@ namespace dosamigos\google\maps;
 
 use yii\web\JsExpression;
 
+/**
+ * PluginAbstract
+ *
+ * Abstract object where all plugins should extend from.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 abstract class PluginAbstract extends ObjectAbstract
 {
 
+    /**
+     * Sets the map name
+     * @param string $value
+     */
     public function setMap($value)
     {
         $this->options['map'] = new JsExpression($value);

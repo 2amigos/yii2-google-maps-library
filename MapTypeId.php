@@ -7,6 +7,16 @@
 namespace dosamigos\google\maps;
 
 
+/**
+ * MapTypeId
+ *
+ * Identifiers for common MapTypes.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class MapTypeId
 {
     const HYBRID = 'google.maps.MapTypeId.HYBRID';
@@ -14,6 +24,12 @@ class MapTypeId
     const SATELLITE = 'google.maps.MapTypeId.SATELLITE';
     const TERRAIN = 'google.maps.MapTypeId.TERRAIN';
 
+    /**
+     * Checks whether value is a valid [MapTypeId] constant.
+     * @param $value
+     *
+     * @return bool
+     */
     public static function getIsValid($value){
         return in_array(
             $value,

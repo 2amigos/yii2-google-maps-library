@@ -6,12 +6,12 @@
  */
 namespace dosamigos\google\maps;
 
-
 use yii\base\InvalidConfigException;
 use yii\base\Object;
 
 /**
  * Point
+ *
  * Google maps point
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
@@ -51,7 +51,9 @@ class Point extends Object
 
     /**
      * Sets x coordinate ght of the Point
+     *
      * @param $value
+     *
      * @throws \yii\base\InvalidConfigException
      */
     public function setX($value)
@@ -65,7 +67,9 @@ class Point extends Object
 
     /**
      * Sets the y coordinate of the Point
+     *
      * @param $value
+     *
      * @throws \yii\base\InvalidConfigException
      */
     public function setY($value)

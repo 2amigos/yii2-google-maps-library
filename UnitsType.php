@@ -6,7 +6,16 @@
  */
 namespace dosamigos\google\maps;
 
-
+/**
+ * UnitsType
+ *
+ * Helper class with utility values
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class UnitsType
 {
     const EARTH_RADIUS = 6380;

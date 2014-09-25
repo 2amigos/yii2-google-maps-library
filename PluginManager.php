@@ -10,13 +10,28 @@ namespace dosamigos\google\maps;
 use yii\base\Object;
 use yii\helpers\ArrayHelper;
 
+/**
+ * PluginManager
+ *
+ * Manages installed plugins.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 class PluginManager extends Object
 {
+    /**
+     * @var array stores the managed plugins
+     */
     private $_plugins = [];
 
     /**
      * Check whether we have a plugin installed with that name previous firing up the call
+     *
      * @param string $name
+     *
      * @return mixed|void
      */
     public function __get($name)
@@ -29,7 +44,9 @@ class PluginManager extends Object
 
     /**
      * Installs a plugin
+     *
      * @param PluginAbstract $plugin
+     *
      * @return void
      */
     public function install(PluginAbstract $plugin)
@@ -39,7 +56,9 @@ class PluginManager extends Object
 
     /**
      * Removes a plugin
+     *
      * @param PluginAbstract $plugin
+     *
      * @return mixed|null the value of the element if found, default value otherwise
      */
     public function remove(PluginAbstract $plugin)
@@ -69,7 +88,9 @@ class PluginManager extends Object
 
     /**
      * Returns an installed plugin by name
+     *
      * @param string $name
+     *
      * @return PluginAbstract|null
      */
     public function getPlugin($name)

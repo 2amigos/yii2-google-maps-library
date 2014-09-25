@@ -7,6 +7,16 @@
 namespace dosamigos\google\maps;
 
 
+/**
+ * OptionsTrait
+ *
+ * Contains common functions for option classes.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps
+ */
 trait OptionsTrait
 {
     /**
@@ -15,7 +25,8 @@ trait OptionsTrait
     public function getJs()
     {
         $name = $this->getName(false) ? "var {$this->getName()} = " : "";
+        $end = $this->getName(false) ? ";" : "";
         $options = $this->getEncodedOptions();
-        return "{$name}{$options}";
+        return "{$name}{$options}{$end}";
     }
 } 
