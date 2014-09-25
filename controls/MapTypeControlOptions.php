@@ -21,6 +21,17 @@ use yii\web\JsExpression;
  * For further information please visit its
  * [documentation](https://developers.google.com/maps/documentation/javascript/reference#MapTypeControlOptions) at Google.
  *
+ * ```
+ * use dosamigos\google\maps\controls\MapTypeControlOptions;
+ * use dosamigos\google\maps\controls\MapTypeControlStyle;
+ * use dosamigos\google\maps\Map;
+ *
+ * $options = new MapTypeControlOptions(['style' => MapTypeControlStyle::DROPDOWN_MENU]);
+ *
+ * $map = new Map(['mayTypeControlOptions' => $options]);
+ *
+ * ```
+ *
  * @property array mapTypeIds IDs of map types to show in the control.
  * @property string position Position id by [ControlPosition]. Used to specify the position of the control on the map.
  * The default position is [ControlPosition::TOP_RIGHT].

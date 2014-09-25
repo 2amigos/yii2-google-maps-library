@@ -15,6 +15,16 @@ namespace dosamigos\google\maps\controls;
  * For further information please visit its
  * [documentation](https://developers.google.com/maps/documentation/javascript/reference#MapTypeControlStyle) at Google.
  *
+ * ```
+ * use dosamigos\google\maps\controls\MapTypeControlOptions;
+ * use dosamigos\google\maps\controls\MapTypeControlStyle;
+ * use dosamigos\google\maps\Map;
+ *
+ * $options = new MapTypeControlOptions(['style' => MapTypeControlStyle::DROPDOWN_MENU]);
+ *
+ * $map = new Map(['mayTypeControlOptions' => $options]);
+ * ```
+ *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
  * @link http://www.2amigos.us/

@@ -15,6 +15,10 @@ namespace dosamigos\google\maps\controls;
  * For further information please visit its
  * [documentation](https://developers.google.com/maps/documentation/javascript/reference#ControlPosition) at Google.
  *
+ * ```
+ * echo ControlPosition::TOP_CENTER;
+ * ```
+ *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
  * @link http://www.2amigos.us/
