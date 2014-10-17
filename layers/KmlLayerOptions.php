@@ -41,7 +41,6 @@ class KmlLayerOptions extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-        parent::__construct($config);
 
         $this->options = ArrayHelper::merge(
             [
@@ -55,6 +54,8 @@ class KmlLayerOptions extends ObjectAbstract
             ],
             $this->options
         );
+
+        parent::__construct($config);
     }
 
     /**

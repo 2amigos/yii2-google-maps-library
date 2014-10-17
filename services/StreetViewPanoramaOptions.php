@@ -53,7 +53,6 @@ class StreetViewPanoramaOptions extends ObjectAbstract
      */
     function __construct($config = [])
     {
-        parent::__construct($config);
 
         $this->options = ArrayHelper::merge(
             [
@@ -77,6 +76,8 @@ class StreetViewPanoramaOptions extends ObjectAbstract
             ],
             $this->options
         );
+
+        parent::__construct($config);
     }
 
     /**

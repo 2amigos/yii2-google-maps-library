@@ -29,7 +29,6 @@ class DirectionsClient extends ClientAbstract
      */
     public function __construct($config = [])
     {
-        parent::__construct($config);
 
         $this->params = ArrayHelper::merge(
             [
@@ -47,6 +46,8 @@ class DirectionsClient extends ClientAbstract
             ],
             $this->params
         );
+
+        parent::__construct($config);
     }
 
     /**

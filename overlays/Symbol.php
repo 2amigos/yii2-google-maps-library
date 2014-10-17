@@ -58,7 +58,6 @@ class Symbol extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-        parent::__construct($config);
 
         $this->options = ArrayHelper::merge(
             [
@@ -74,6 +73,8 @@ class Symbol extends ObjectAbstract
             ],
             $this->options
         );
+
+        parent::__construct($config);
     }
 
     /**

@@ -32,7 +32,6 @@ class GeocodingClient extends ClientAbstract
      */
     public function __construct($config = [])
     {
-        parent::__construct($config);
 
         $this->params = ArrayHelper::merge(
             [
@@ -45,6 +44,8 @@ class GeocodingClient extends ClientAbstract
             ],
             $this->params
         );
+
+        parent::__construct($config);
     }
 
     /**
