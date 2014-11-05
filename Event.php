@@ -85,7 +85,7 @@ class Event extends Object
     public function getFunction()
     {
         return $this->wrap
-            ? "function(){{$this->js}}"
+            ? "function(event){{$this->js}}"
             : $this->js;
     }
 
