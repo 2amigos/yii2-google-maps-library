@@ -29,7 +29,11 @@ class MapAsset extends AssetBundle
         // To configure please, add `googleMapsApiKey` parameter to your application configuration
         // file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
         $key = @Yii::$app->params['googleMapsApiKey'];
-
-        $this->js[] = 'https://maps.googleapis.com/maps/api/js?key=' . $key;
+        
+        // To configure please, add `googleMapsLibraries` parameter to your application configuration
+        $libraries = @Yii::$app->params['googleMapsLibraries'];
+        
+        $this->js[] = 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&libraries=' . $libraries;
+        
     }
 } 
