@@ -117,7 +117,7 @@ abstract class ObjectAbstract extends Object
         $options = [];
 
         foreach ($this->options as $key => $value) {
-            if($value == null) {
+            if($value === null) {
                 continue;
             }
             $options[$key] = $this->encode($value);
