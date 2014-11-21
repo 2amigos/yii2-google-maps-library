@@ -32,8 +32,10 @@ class MapAsset extends AssetBundle
         
         // To configure please, add `googleMapsLibraries` parameter to your application configuration
         $libraries = @Yii::$app->params['googleMapsLibraries'];
-        
-        $this->js[] = 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&libraries=' . $libraries;
-        
+
+        // To configure please, add `googleMapsLanguage` parameter to your application configuration
+        $language = @Yii::$app->params['googleMapsLanguage'];
+
+        $this->js[] = 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&libraries=' . $libraries . '&language=' . $language;
     }
 } 
