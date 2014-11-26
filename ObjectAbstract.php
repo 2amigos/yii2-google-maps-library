@@ -129,7 +129,7 @@ abstract class ObjectAbstract extends Object
     }
 
     /**
-     * Properly encodes json values
+     * Makes sure a value is properly set to be JSON encoded
      * @return string
      */
     protected function encode($value) {
