@@ -128,6 +128,10 @@ abstract class ObjectAbstract extends Object
         return Json::encode($options);
     }
 
+    /**
+     * Properly encodes json values
+     * @return string
+     */
     protected function encode($value) {
         if (is_object($value) && method_exists($value, 'getJs')) {
             return new JsExpression($value->getJs());
@@ -140,8 +144,13 @@ abstract class ObjectAbstract extends Object
             }
             return $parsed;
         }
-        try { return Json::decode($value); }
-        catch (InvalidParamException $ex) {}
+        try { 
+            // a value may contain a valid JSON string
+            return Json::decode($value); 
+        }
+        catch (InvalidParamException $e) {
+            
+        }
         return $value;
     }
 
