@@ -6,6 +6,7 @@
  */
 namespace dosamigos\google\maps\overlays;
 
+use dosamigos\google\maps\LatLngBounds;
 use dosamigos\google\maps\overlays\RectangleOptions;
 use dosamigos\google\maps\OverlayTrait;
 use yii\base\InvalidConfigException;
@@ -53,7 +54,7 @@ class Rectangle extends RectangleOptions
      */
     public function getCenterOfBounds()
     {
-        return (null !== $this->bounds && $this->bounds instanceof \dosamigos\google\maps\LatLngBounds)
+        return (null !== $this->bounds && $this->bounds instanceof LatLngBounds)
             ? $this->bounds->getCenterCoordinates()
             : null;
     }
