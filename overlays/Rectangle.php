@@ -53,7 +53,7 @@ class Rectangle extends RectangleOptions
      */
     public function getCenterOfBounds()
     {
-        return (null !== $this->bounds && $this->bounds instanceof LatLngBounds)
+        return (null !== $this->bounds && $this->bounds instanceof \dosamigos\google\maps\LatLngBounds)
             ? $this->bounds->getCenterCoordinates()
             : null;
     }
