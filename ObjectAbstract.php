@@ -12,6 +12,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
 use yii\web\JsExpression;
+use yii\base\InvalidParamException;
 
 /**
  * ObjectAbstract
@@ -139,6 +140,8 @@ abstract class ObjectAbstract extends Object
             }
             return $parsed;
         }
+        try { return Json::decode($value); }
+        catch (InvalidParamException $ex) {}
         return $value;
     }
 
