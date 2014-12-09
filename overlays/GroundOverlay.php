@@ -78,7 +78,7 @@ class GroundOverlay extends CircleOptions
         $js[] = "var {$this->getName()} = new google.maps.GroundOverlay('{$this->url}',{$bounds}, {$options});";
 
         foreach ($this->events as $event) {
-            /** @var Event $event */
+            /** @var \dosamigos\google\maps\Event $event */
             $js[] = $event->getJs($this->getName());
         }
 

@@ -47,6 +47,7 @@ class Encoder
      * Generates all values needed for the encoded Google Maps [\dosamigos\google\maps\overlays\Polyline].
      *
      * @param array $points Multidimensional input array of [\dosamigos\google\maps\Point] elements
+     *
      * @return stdClass    Simple object containing three public parameter:
      *                    - points: the points string with escaped backslashes
      *          - levels: the encoded levels ready to use
@@ -123,6 +124,8 @@ class Encoder
      */
     private function distance($p0, $p1, $p2)
     {
+        $out = null;
+
         if ($p1[0] == $p2[0] && $p1[1] == $p2[1]) {
             $out = sqrt(pow($p2[0] - $p0[0], 2) + pow($p2[1] - $p0[1], 2));
         } else {

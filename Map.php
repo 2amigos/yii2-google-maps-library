@@ -201,7 +201,7 @@ class Map extends ObjectAbstract
         $markers = $this->getMarkers();
         $bounds = LatLngBounds::getBoundsOfMarkers($markers, $margin);
 
-        return $bounds->getZoom(min($this->with, $this->height), $default);
+        return $bounds->getZoom(min($this->width, $this->height), $default);
 
     }
 
@@ -247,7 +247,7 @@ class Map extends ObjectAbstract
      */
     public function getBoundsFromCenterAndZoom()
     {
-        return LatLngBounds::getBoundsFromCenterAndZoom($this->center, $this->zoom, $this->with, $this->height);
+        return LatLngBounds::getBoundsFromCenterAndZoom($this->center, $this->zoom, $this->width, $this->height);
     }
 
     /**
@@ -419,8 +419,8 @@ class Map extends ObjectAbstract
         }
 
         foreach ($this->getPlugins()->getInstalledPlugins() as $plugin) {
-            /** @var PluginAbstract $plugin */
-            $plugin->map = $this->name;
+            /** @var \dosamigos\google\maps\PluginAbstract $plugin */
+            $plugin->map = $this->getName();
             $js[] = $plugin->getJs($name);
         }
 

@@ -49,7 +49,7 @@ class Rectangle extends RectangleOptions
 
     /**
      * Returns center of bounds
-     * @return LatLng|null
+     * @return \dosamigos\google\maps\LatLng|null
      */
     public function getCenterOfBounds()
     {
@@ -70,7 +70,7 @@ class Rectangle extends RectangleOptions
         $js[] = "var {$this->getName()} = new google.maps.Rectangle({$this->getEncodedOptions()});";
 
         foreach($this->events as $event) {
-            /** @var Event $event */
+            /** @var \dosamigos\google\maps\Event $event */
             $js[] = $event->getJs($this->getName());
         }
 

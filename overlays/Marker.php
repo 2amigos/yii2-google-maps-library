@@ -84,7 +84,7 @@ class Marker extends MarkerOptions
         $js[] = "var {$this->getName()} = new google.maps.Marker({$this->getEncodedOptions()});";
 
         foreach ($this->events as $event) {
-            /** @var Event $event */
+            /** @var \dosamigos\google\maps\Event $event */
             $js[] = $event->getJs($this->getName());
         }
 
