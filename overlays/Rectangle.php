@@ -7,7 +7,6 @@
 namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\LatLngBounds;
-use dosamigos\google\maps\overlays\RectangleOptions;
 use dosamigos\google\maps\OverlayTrait;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
