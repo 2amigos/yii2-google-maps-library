@@ -149,6 +149,28 @@ echo $map->display();
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
 future too.
 
+##Configuration
+
+To configure the Google Map key or other options like language, version, library, use the [Asset Bundle customization](http://www.yiiframework.com/doc-2.0/guide-structure-assets.html#customizing-asset-bundles) feature.
+
+```php
+'components' => [
+    'assetManager' => [
+        'bundles' => [
+            'dosamigos\google\maps\MapAsset' => [
+                'options' => [
+                    'key' => 'this_is_my_key',
+                    'language' => 'id',
+                    'version' => '3.1.18'
+                ]
+            ]
+        ]
+    ],
+],
+```
+
+To get key, please visit https://code.google.com/apis/console/
+
 ##Resources
 
  * [Google Maps API Reference](https://developers.google.com/maps/documentation/)

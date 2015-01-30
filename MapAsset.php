@@ -15,7 +15,8 @@ use yii\web\AssetBundle;
  * Registers the google maps api
  *
  * To update the key or other options like language, version, or library
- * use the assetManager customization.
+ * use the Asset Bundle customization.
+ * http://www.yiiframework.com/doc-2.0/guide-structure-assets.html#customizing-asset-bundles
  * To get key, please visit https://code.google.com/apis/console/
  *
  *      'components' => [
