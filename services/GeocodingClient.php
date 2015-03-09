@@ -71,7 +71,7 @@ class GeocodingClient extends ClientAbstract
     {
         $this->params = ArrayHelper::merge($this->params, $params);
 
-        if ($this->params['address'] == null && $this->params['components'] == null) {
+        if ($this->params['address'] == null || $this->params['components'] == null) {
             throw new InvalidConfigException('"address" or "components" must be set for the request. Both cannot be null');
         }
 
