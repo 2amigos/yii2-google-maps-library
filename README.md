@@ -1,12 +1,12 @@
-yii2-google-maps-library
-========================
+# Google Maps API library for Yii2
 
-Google Maps API library for Yii2
+[![Latest Version](https://img.shields.io/github/tag/2amigos/yii2-google-maps-library.svg?style=flat-square&label=release)](https://github.com/2amigos/yii2-google-maps-library/tags)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/2amigos/yii2-google-maps-library/master.svg?style=flat-square)](https://travis-ci.org/2amigos/yii2-google-maps-library)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/2amigos/yii2-google-maps-library.svg?style=flat-square)](https://scrutinizer-ci.com/g/2amigos/yii2-google-maps-library/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/2amigos/yii2-google-maps-library.svg?style=flat-square)](https://scrutinizer-ci.com/g/2amigos/yii2-google-maps-library)
+[![Total Downloads](https://img.shields.io/packagist/dt/2amigos/yii2-google-maps-library.svg?style=flat-square)](https://packagist.org/packages/2amigos/yii2-google-maps-library)
 
-[![Latest Stable Version](https://poser.pugx.org/2amigos/yii2-google-maps-library/v/stable.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![Total Downloads](https://poser.pugx.org/2amigos/yii2-google-maps-library/downloads.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![Latest Unstable Version](https://poser.pugx.org/2amigos/yii2-google-maps-library/v/unstable.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library) [![License](https://poser.pugx.org/2amigos/yii2-google-maps-library/license.svg)](https://packagist.org/packages/2amigos/yii2-google-maps-library)
-
-Introduction
-------------
 Even though we already created an extension to display maps that are away from Google's policies and works with
 [LeafLetJs](http://leafletjs.com/ "http://leafletjs.com/") library, we still received requests to have
 [EGMap extension for Yii1](http://www.yiiframework.com/extension/egmap) updated. So we thought that we should update
@@ -19,24 +19,25 @@ and wishes to update us with its tests and bug findings.
 The github repository will keep being updated, and documentation well written for its usage. So please, do not be
 impatient. If you do, any help will be highly appreciated.
 
-##Installation
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
 
+```bash
+$ composer require 2amigos/yii2-google-maps-library:~1.0
 ```
-php composer.phar require "2amigos/yii2-google-maps-library" "*"
-```
+
 or add
 
-```json
-"2amigos/yii2-google-maps-library" : "*"
+```
+"2amigos/yii2-google-maps-library": "~1.0"
 ```
 
-to the require section of your application's `composer.json` file.
+to the `require` section of your `composer.json` file.
 
-##Usage
+## Usage
 
 Even though there will be plenty of examples on how to use it, here is one that will provide you with a glimpse of its
 usage:
@@ -149,7 +150,7 @@ echo $map->display();
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
 future too.
 
-##Configuration
+## Configuration
 
 To configure the Google Map key or other options like language, version, library, use the [Asset Bundle customization](http://www.yiiframework.com/doc-2.0/guide-structure-assets.html#customizing-asset-bundles) feature.
 
@@ -171,12 +172,28 @@ To configure the Google Map key or other options like language, version, library
 
 To get key, please visit https://code.google.com/apis/console/
 
-##Resources
+## Testing
 
- * [Google Maps API Reference](https://developers.google.com/maps/documentation/)
- * [GitHub](https://github.com/2amigos/yii2-google-maps-library)
- * [2amigOS Packagist Profile](https://packagist.org/packages/2amigos/)
+```bash
+$ ./vendor/bin/phpunit
+```
 
-> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)
-<i>web development has never been so fun</i>
-[www.2amigos.us](http://www.2amigos.us)
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Credits
+
+- [Antonio Ramirez](https://github.com/tonydspaniard)
+- [Alexander Kochetov](https://github.com/creocoder)
+- [All Contributors](https://github.com/2amigos/yii2-google-maps-library/graphs/contributors)
+
+## License
+
+The BSD License (BSD). Please see [License File](LICENSE.md) for more information.
+
+<blockquote>
+    <a href="http://www.2amigos.us"><img src="http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png"></a><br>
+    <i>web development has never been so fun</i><br>
+    <a href="http://www.2amigos.us">www.2amigos.us</a>
+</blockquote>

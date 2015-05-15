@@ -1,0 +1,48 @@
+<?php
+/**
+ * @link https://github.com/2amigos/yii2-google-maps-library
+ * @copyright Copyright (c) 2013-2015 2amigOS! Consulting Group LLC
+ * @license http://opensource.org/licenses/BSD-3-Clause
+ */
+
+namespace dosamigos\google\maps\layers;
+
+
+use yii\base\InvalidConfigException;
+
+/**
+ * WeatherLayer
+ *
+ * Renders a layer that displays weather icons.
+ *
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ * @package dosamigos\google\maps\layers
+ */
+class WeatherLayer extends WeatherLayerOptions
+{
+    /**
+     * @inheritdoc
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function init()
+    {
+        if ($this->map == null) {
+            throw new InvalidConfigException('"map" cannot be null');
+        }
+    }
+
+    /**
+     * Returns the required javascript code to initialize the object.
+     *
+     * @return string
+     */
+    public function getJs()
+    {
+        $name = $this->getName();
+        $options = $this->getEncodedOptions();
+
+        return "var {$name} = new google.maps.weather.WeatherLayer({$options});";
+    }
+}
