@@ -62,7 +62,7 @@ class StreetViewPanorama extends StreetViewPanoramaOptions
         $js = [];
 
         $js[] = "var {$this->getName()} = " .
-            "new google.maps.StreetViewPanorama(document.getElementById('{$this->nodeId}',{$this->getEncodedOptions()});";
+            "new google.maps.StreetViewPanorama(document.getElementById('{$this->nodeId}'),{$this->getEncodedOptions()});";
 
         foreach ($this->events as $event) {
             /** @var \dosamigos\google\maps\Event $event */
