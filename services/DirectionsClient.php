@@ -56,7 +56,7 @@ class DirectionsClient extends ClientAbstract
      */
     public function getUrl()
     {
-        return 'http://maps.googleapis.com/maps/api/directions/' . $this->format;
+        return 'https://maps.googleapis.com/maps/api/directions/' . $this->format;
     }
 
 } 
