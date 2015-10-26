@@ -59,4 +59,24 @@ class DirectionsClient extends ClientAbstract
         return 'https://maps.googleapis.com/maps/api/directions/' . $this->format;
     }
 
+    /**
+     * Makes a geocoding request for an direction parameters. Please, review the documentation on
+     * https://developers.google.com/maps/documentation/directions/intro#DirectionsResponses for further information about the
+     * expected results.
+     *
+     * @param array $params parameters for the request. These override [DirectionsRequest::params].
+     *
+     * @return mixed|null
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function lookup($params = [])
+    {
+        $this->params = ArrayHelper::merge($this->params, $params);
+
+        if ($this->params['origin'] == null && $this->params['destination'] == null) {
+            throw new InvalidConfigException('"origin" and "destination" must be set for the request. Both cannot be null');
+        }
+
+        return parent::request();
+    }
 } 
