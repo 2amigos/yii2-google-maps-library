@@ -147,6 +147,21 @@ $map->appendScript($bikeLayer->getJs());
 echo $map->display();
 ```
 
+##Client
+```php
+use dosamigos\google\maps\services\DirectionsClient;
+
+$direction = new DirectionsClient([
+    'params' => [
+        'language' => Yii::$app->language,
+        'origin' => 'street from',
+        'destination' => 'street to'
+    ]
+]);
+
+$data = $direction->lookup(); //get data from google.maps API
+```
+
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
 future too.
 
@@ -168,21 +183,6 @@ To configure the Google Map key or other options like language, version, library
         ]
     ],
 ],
-```
-
-##Client
-```php
-use dosamigos\google\maps\services\DirectionsClient;
-
-$direction = new DirectionsClient([
-    'params' => [
-        'language' => Yii::$app->language,
-        'origin' => 'street from',
-        'destination' => 'street to'
-    ]
-]);
-
-$data = $direction->lookup(); //get data from google.maps API
 ```
 
 To get key, please visit https://code.google.com/apis/console/
