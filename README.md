@@ -41,6 +41,7 @@ to the require section of your application's `composer.json` file.
 Even though there will be plenty of examples on how to use it, here is one that will provide you with a glimpse of its
 usage:
 
+##Service
 ```php
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\services\DirectionsWayPoint;
@@ -144,6 +145,21 @@ $map->appendScript($bikeLayer->getJs());
 
 // Display the map -finally :)
 echo $map->display();
+```
+
+##Client
+```php
+use dosamigos\google\maps\services\DirectionsClient;
+
+$direction = new DirectionsClient([
+    'params' => [
+        'language' => Yii::$app->language,
+        'origin' => 'street from',
+        'destination' => 'street to'
+    ]
+]);
+
+$data = $direction->lookup(); //get data from google.maps API
 ```
 
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
