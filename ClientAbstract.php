@@ -70,8 +70,8 @@ abstract class ClientAbstract extends Object
                 ->get($this->getUrl(), ['query' => $params], $options);
 
             return $this->format == 'json'
-                ? $response->json()
-                : $response->xml();
+                ? json_decode($response->getBody())
+                : simplexml_load_string($response->getBody());
 
         } catch (RequestException $e) {
             return null;
