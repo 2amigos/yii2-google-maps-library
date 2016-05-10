@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 use yii\web\JsExpression;
 
 /**
- * GrounOverlayOptions
+ * GroundOverlayOptions
  *
  * Eases the configuration of a GroundOverlay
  *
