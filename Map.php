@@ -426,7 +426,7 @@ class Map extends ObjectAbstract
 
         $js = ArrayHelper::merge($js, $this->_js);
         $js[] = "};";
-        $js[] = "google.maps.event.addDomListener(window, 'load', initialize);";
+        $js[] = "initialize();";
         $js[] = "})();";
 
         return implode("\n", $js);
