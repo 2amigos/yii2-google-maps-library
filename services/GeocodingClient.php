@@ -87,7 +87,7 @@ class GeocodingClient extends ClientAbstract
      */
     public function reverse(LatLng $coord, $params = [])
     {
-        $params['latlng'] = $coord;
+        $params['latlng'] = $coord->__toString();
 
         $this->params = ArrayHelper::merge($this->params, $params);
 
