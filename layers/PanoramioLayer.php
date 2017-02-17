@@ -19,7 +19,7 @@ use yii\base\InvalidConfigException;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\layers
  */
-class PanoramioLayer extends WeatherLayerOptions
+class PanoramioLayer extends PanoramioLayerOptions
 {
     /**
      * @inheritdoc
