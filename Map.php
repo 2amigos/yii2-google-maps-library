@@ -365,7 +365,7 @@ class Map extends ObjectAbstract
     {
         $view = Yii::$app->getView();
         MapAsset::register($view);
-
+        $this->getPlugins()->registerAssetBundles($view);
         $view->registerJs($this->getJs(), $position);
     }
 
