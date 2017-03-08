@@ -39,9 +39,9 @@ class GroundOverlay extends CircleOptions
     public function init()
     {
 
-        if ($this->url == null || $this->getBounds() == null) {
-            throw new InvalidConfigException('"url" and/or "bounds" cannot be null');
-        }
+        //if ($this->url == null || $this->getBounds() == null) {
+            //throw new InvalidConfigException('"url" and/or "bounds" cannot be null');
+        //}
     }
 
 
