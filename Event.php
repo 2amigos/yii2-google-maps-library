@@ -35,6 +35,10 @@ class Event extends Object
      */
     public $wrap = true;
     /**
+     * @var string the name of the object that is going to be used as a js variable of the DOM event type. (ie `"document.getElementById("id")"`)
+     */
+    public $name;
+    /**
      * @var string the type of event. Defaults to [[EventType::DEFAULT_EVENT]]
      */
     private $_type = EventType::DEFAULT_EVENT;
@@ -130,9 +134,9 @@ class Event extends Object
             case EventType::DEFAULT_ONCE:
                 return $this->getEventJs($name, true);
             case EventType::DOM:
-                return $this->getDomEventJs($name);
+                return $this->getDomEventJs($this->name ? $this->name : $name);
             case EventType::DOM_ONCE:
-                return $this->getDomEventJs($name, true);
+                return $this->getDomEventJs($this->name ? $this->name : $name, true);
             case EventType::DEFAULT_EVENT:
             default:
                 return $this->getEventJs($name);
