@@ -19,7 +19,7 @@ and wishes to update us with its tests and bug findings.
 The github repository will keep being updated, and documentation well written for its usage. So please, do not be
 impatient. If you do, any help will be highly appreciated.
 
-##Installation
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -36,12 +36,12 @@ or add
 
 to the require section of your application's `composer.json` file.
 
-##Usage
+## Usage
 
 Even though there will be plenty of examples on how to use it, here is one that will provide you with a glimpse of its
 usage:
 
-##Service
+## Service
 ```php
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\services\DirectionsWayPoint;
@@ -147,7 +147,7 @@ $map->appendScript($bikeLayer->getJs());
 echo $map->display();
 ```
 
-##Client
+## Client
 ```php
 use dosamigos\google\maps\services\DirectionsClient;
 
@@ -165,7 +165,7 @@ $data = $direction->lookup(); //get data from google.maps API
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
 future too.
 
-##Configuration
+## Configuration
 
 To configure the Google Map key or other options like language, version, library, use the [Asset Bundle customization](http://www.yiiframework.com/doc-2.0/guide-structure-assets.html#customizing-asset-bundles) feature.
 
@@ -187,7 +187,7 @@ To configure the Google Map key or other options like language, version, library
 
 To get key, please visit https://code.google.com/apis/console/
 
-##Resources
+## Resources
 
  * [Google Maps API Reference](https://developers.google.com/maps/documentation/)
  * [GitHub](https://github.com/2amigos/yii2-google-maps-library)
