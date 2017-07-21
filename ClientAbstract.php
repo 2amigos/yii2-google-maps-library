@@ -6,6 +6,7 @@
  */
 namespace dosamigos\google\maps;
 
+use Exception;
 use Yii;
 use yii\base\Object;
 use GuzzleHttp\Exception\RequestException;
@@ -28,11 +29,6 @@ abstract class ClientAbstract extends Object
      */
     public $format = 'json';
     /**
-     * @var string your API key. To configure please, add `googleMapsApiKey` parameter to your application configuration
-     * file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
-     */
-    public static $key;
-    /**
      * @var array the request parameters
      */
     public $params = [];
@@ -52,7 +48,20 @@ abstract class ClientAbstract extends Object
      */
     public function init()
     {
-        $this->params['key'] = @Yii::$app->params['googleMapsApiKey'] ? : null;
+        /** @var MapAsset|null $mapBundle */
+        $mapBundle = @Yii::$app->getAssetManager()->getBundle(MapAsset::className());
+        if ($mapBundle) {
+            $this->params = array_merge($this->params, $mapBundle->options);
+        }
+
+        /** BACKWARD COMPATIBILITY */
+        if (!isset($this->params['key']) || !$this->params['key']) {
+            $this->params['key'] = @Yii::$app->params['googleMapsApiKey'] ? : null;
+        }
+
+        if (!$this->params['key']) {
+            throw new Exception("Invalid configuration - missing Google API key! Configure MapAsset bundle in assetManager");
+        }
     }
 
     /**
