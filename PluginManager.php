@@ -7,7 +7,7 @@
 namespace dosamigos\google\maps;
 
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-class PluginManager extends Object
+class PluginManager extends BaseObject
 {
     /**
      * @var array stores the managed plugins
@@ -97,4 +97,4 @@ class PluginManager extends Object
     {
         return isset($this->_plugins[$name]) ? $this->_plugins[$name] : null;
     }
-} 
+}

@@ -7,7 +7,7 @@
 namespace dosamigos\google\maps;
 
 use yii\base\InvalidConfigException;
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * Size
@@ -19,7 +19,7 @@ use yii\base\Object;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-class Size extends Object
+class Size extends BaseObject
 {
     /**
      *
@@ -93,4 +93,4 @@ class Size extends Object
     {
         return "new google.maps.Size({$this->_width}, {$this->_height})";
     }
-} 
+}
