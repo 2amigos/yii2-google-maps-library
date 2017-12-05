@@ -37,7 +37,7 @@ abstract class ObjectAbstract extends BaseObject
      */
     public static $autoNamePrefix = 'g';
     /**
-     * @var array the client options of the object. BaseObjects will be initialized with default options.
+     * @var array the client options of the object. Objects will be initialized with default options.
      */
     public $options = [];
     /**
