@@ -53,6 +53,26 @@ class IconSequence extends ObjectAbstract
     }
 
     /**
+     * Sets the distance between consecutive icons on the line.
+     *
+     * @param string $repeat
+     */
+    public function setRepeat($repeat)
+    {
+        $this->options['repeat'] = $repeat;
+    }
+
+    /**
+     * Sets the icon Symbol to render on the line
+     * 
+     * @param Symbol $icon
+     */
+    public function setIcon(Symbol $icon)
+    {
+        $this->options['icon'] = $icon;
+    }
+
+    /**
      * Sets the path of the [IconSequence]
      *
      * @param $value
