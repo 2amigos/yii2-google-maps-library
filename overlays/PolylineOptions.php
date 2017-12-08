@@ -103,10 +103,10 @@ class PolylineOptions extends ObjectAbstract
      *
      * @param LatLng[] $coords
      */
-    public function setPath($coords)
+/*    public function setPath($coords)
     {
         foreach ($coords as $coord) {
             $this->addCoord($coord);
         }
-    }
+    }*/
 } 
