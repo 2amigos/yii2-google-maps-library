@@ -67,6 +67,6 @@ class MapAsset extends AssetBundle
 	]));
 	// BACKWARD COMPATIBILITY
 
-        $this->js[] = 'https://maps.googleapis.com/maps/api/js?'. http_build_query($this->options);
+        $this->js[] = '//maps.googleapis.com/maps/api/js?'. http_build_query($this->options);
     }
 } 
