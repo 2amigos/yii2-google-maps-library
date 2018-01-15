@@ -64,7 +64,7 @@ use yii\helpers\ArrayHelper;
  * should not appear (e.g. a non-Earth map type).
  * @property [\doamigos\maps\controls\StreetViewControlOptions] streetViewControlOptions The initial display options
  * for the Street View Pegman control.
- * @property array styles Styles to apply to each of the default map types. Note that for Satellite/Hybrid and Terrain
+ * @property string styles Styles to apply to each of the default map types. Note that for Satellite/Hybrid and Terrain
  * modes, these styles will only apply to labels and geometry.
  * @property int tilt Controls the automatic switching behavior for the angle of incidence of the map. The only allowed
  * values are 0 and 45. The value 0 causes the map to always use a 0° overhead view regardless of the zoom level and
@@ -461,4 +461,4 @@ class Map extends ObjectAbstract
     {
         return $this->getPlugins()->remove($plugin);
     }
-} 
+}
