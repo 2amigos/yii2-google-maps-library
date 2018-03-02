@@ -7,7 +7,7 @@
 namespace dosamigos\google\maps;
 
 
-use yii\base\BaseObject;
+use yii\base\Object;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
@@ -24,7 +24,7 @@ use yii\base\InvalidParamException;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-abstract class ObjectAbstract extends BaseObject
+abstract class ObjectAbstract extends Object
 {
     /**
      * @var integer a counter used to generate [[id]] for map objects.
