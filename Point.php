@@ -7,7 +7,7 @@
 namespace dosamigos\google\maps;
 
 use yii\base\InvalidConfigException;
-use yii\base\BaseObject;
+use yii\base\Object;
 
 /**
  * Point
@@ -19,7 +19,7 @@ use yii\base\BaseObject;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-class Point extends BaseObject
+class Point extends Object
 {
     /**
      *
