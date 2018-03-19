@@ -152,7 +152,7 @@ class MarkerOptions extends ObjectAbstract
      *
      * @param string $label
      */
-	public function setLabel($label)
+    public function setLabel($label)
     {
         $this->options['label'] = $label;
     }
