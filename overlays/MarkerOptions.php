@@ -75,6 +75,7 @@ class MarkerOptions extends ObjectAbstract
                 'cursor' => null,
                 'draggable' => null,
                 'icon' => null,
+                'label' => null,
                 'map' => null,
                 'opacity' => null,
                 'optimized' => null,
@@ -144,6 +145,16 @@ class MarkerOptions extends ObjectAbstract
             throw new InvalidConfigException('Unknown animation');
         }
         $this->options['animation'] = new JsExpression($animation);
+    }
+
+    /**
+     * Sets the marker label.
+     *
+     * @param string $label
+     */
+    public function setLabel($label)
+    {
+        $this->options['label'] = $label;
     }
 
     /**
