@@ -10,7 +10,7 @@ namespace dosamigos\google\maps;
 use dosamigos\google\maps\overlays\Marker;
 use dosamigos\google\maps\overlays\Polygon;
 use yii\base\InvalidParamException;
-use yii\base\BaseObject;
+use yii\base\Object;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -23,7 +23,7 @@ use yii\helpers\ArrayHelper;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-class LatLngBounds extends BaseObject
+class LatLngBounds extends Object
 {
     /**
      * @var LatLng|null South West coordinate

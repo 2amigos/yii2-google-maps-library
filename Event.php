@@ -8,7 +8,7 @@ namespace dosamigos\google\maps;
 
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
-use yii\base\BaseObject;
+use yii\base\Object;
 
 /**
  * Event
@@ -20,7 +20,7 @@ use yii\base\BaseObject;
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
-class Event extends BaseObject
+class Event extends Object
 {
     /**
      * @var string the action that will trigger the event
