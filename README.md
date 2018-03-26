@@ -193,6 +193,6 @@ To get key, please visit https://code.google.com/apis/console/
  * [GitHub](https://github.com/2amigos/yii2-google-maps-library)
  * [2amigOS Packagist Profile](https://packagist.org/packages/2amigos/)
 
-> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)
-<i>web development has never been so fun</i>
+> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)  
+<i>beyond software</i>  
 [www.2amigos.us](http://www.2amigos.us)
