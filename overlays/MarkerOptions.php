@@ -48,6 +48,7 @@ use yii\web\JsExpression;
  * @property int zIndex All markers are displayed on the map in order of their zIndex, with higher values displaying in
  * front of markers with lower values. By default, markers are displayed according to their vertical position on screen,
  * with lower markers appearing in front of markers further up the screen.
+ * @property string|integer $category The category of the marker.
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
@@ -76,6 +77,7 @@ class MarkerOptions extends ObjectAbstract
                 'draggable' => null,
                 'icon' => null,
                 'label' => null,
+                'category' => null,
                 'map' => null,
                 'opacity' => null,
                 'optimized' => null,
@@ -155,6 +157,16 @@ class MarkerOptions extends ObjectAbstract
     public function setLabel($label)
     {
         $this->options['label'] = $label;
+    }
+
+    /**
+     * Sets the marker category.
+     *
+     * @param string|integer $category
+     */
+    public function setCategory($category)
+    {
+        $this->options['category'] = $category;
     }
 
     /**
