@@ -201,7 +201,7 @@ class Map extends ObjectAbstract
         $markers = $this->getMarkers();
         $bounds = LatLngBounds::getBoundsOfMarkers($markers, $margin);
 
-        return $bounds->getZoom(min($this->width, $this->height), $default);
+        return $bounds->getZoom(min((int) $this->width, (int) $this->height), $default);
 
     }
 
@@ -247,7 +247,7 @@ class Map extends ObjectAbstract
      */
     public function getBoundsFromCenterAndZoom()
     {
-        return LatLngBounds::getBoundsFromCenterAndZoom($this->center, $this->zoom, $this->width, $this->height);
+        return LatLngBounds::getBoundsFromCenterAndZoom($this->center, $this->zoom, (int) $this->width, (int) $this->height);
     }
 
     /**
