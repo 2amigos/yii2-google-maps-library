@@ -144,6 +144,19 @@ class LatLng extends ObjectAbstract
     }
 
     /**
+     * Returns true if coordinate is within polygon
+     *
+     * @param Polygon $polygon
+     * @param bool $isCheckVertex Check if the point sits exactly on one of the vertices? Default is false.
+     * 
+     * @return bool whether is inside of polygon or not
+     */
+    public function isInPolygon(Polygon $polygon, $isCheckVertex = false)
+    {
+        return $polygon->containsCoordinate($this, $isCheckVertex);
+    }
+
+    /**
      * Exact distance with Haversine formula
      *
      * @param LatLng $coord
