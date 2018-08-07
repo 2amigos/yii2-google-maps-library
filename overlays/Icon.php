@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\ObjectAbstract;
@@ -40,7 +44,6 @@ class Icon extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-
         $this->options = ArrayHelper::merge(
             [
                 'anchor' => null,
@@ -60,7 +63,6 @@ class Icon extends ObjectAbstract
      */
     public function init()
     {
-
         $this->options = ArrayHelper::merge(
             [
                 // String   Sets the URL of the image or sprite sheet
@@ -122,4 +124,4 @@ class Icon extends ObjectAbstract
         $options = $this->getEncodedOptions();
         return "{$name}{$options}";
     }
-} 
+}

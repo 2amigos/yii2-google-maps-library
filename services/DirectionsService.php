@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\services;
 
 use dosamigos\google\maps\ObjectAbstract;
@@ -21,7 +25,6 @@ use yii\base\InvalidConfigException;
  */
 class DirectionsService extends ObjectAbstract
 {
-
     /**
      * @var DirectionsRequest
      */
@@ -36,10 +39,10 @@ class DirectionsService extends ObjectAbstract
      */
     public function init()
     {
-        if($this->getDirectionsRenderer() == null) {
+        if ($this->getDirectionsRenderer() == null) {
             throw new InvalidConfigException('"directionsRenderer" cannot be null');
         }
-        if($this->getDirectionsRequest() == null) {
+        if ($this->getDirectionsRequest() == null) {
             throw new InvalidConfigException('"directionsRequest" cannot be null');
         }
     }
@@ -52,7 +55,6 @@ class DirectionsService extends ObjectAbstract
     {
         $this->_request = $request;
     }
-
 
     /**
      * Returns the directions request object
@@ -99,4 +101,4 @@ class DirectionsService extends ObjectAbstract
 
         return implode("\n", $js);
     }
-} 
+}

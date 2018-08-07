@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
 use yii\base\InvalidParamException;
@@ -21,6 +25,10 @@ use yii\base\InvalidParamException;
 class LatLng extends ObjectAbstract
 {
     /**
+     * @var bool set to true to enable values outside of this range.
+     */
+    public $noWrap = false;
+    /**
      * @var float latitude
      */
     private $_lat;
@@ -28,10 +36,16 @@ class LatLng extends ObjectAbstract
      * @var float longitude
      */
     private $_lng;
+
     /**
-     * @var bool set to true to enable values outside of this range.
+     * @return string the latitude and longitude
      */
-    public $noWrap = false;
+    public function __toString()
+    {
+        $lat = number_format($this->getLat(), 10, '.', '');
+        $lng = number_format($this->getLng(), 10, '.', '');
+        return "$lat, $lng";
+    }
 
     /**
      * @return float the latitude
@@ -139,7 +153,6 @@ class LatLng extends ObjectAbstract
      */
     public function isInBounds(LatLngBounds $bounds)
     {
-
         return $bounds->containsCoordinate($this);
     }
 
@@ -148,7 +161,7 @@ class LatLng extends ObjectAbstract
      *
      * @param Polygon $polygon
      * @param bool $isCheckVertex Check if the point sits exactly on one of the vertices? Default is false.
-     * 
+     *
      * @return bool whether is inside of polygon or not
      */
     public function isInPolygon(Polygon $polygon, $isCheckVertex = false)
@@ -178,16 +191,6 @@ class LatLng extends ObjectAbstract
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
 
         return $c * UnitsType::EARTH_RADIUS;
-    }
-
-    /**
-     * @return string the latitude and longitude
-     */
-    public function __toString()
-    {
-        $lat = number_format($this->getLat(), 10, '.', '');
-        $lng = number_format($this->getLng(), 10, '.', '');
-        return "$lat, $lng";
     }
 
     /**
@@ -248,7 +251,7 @@ class LatLng extends ObjectAbstract
     {
         if ($lat == 90) {
             $pixelY = 0;
-        } else if ($lat == -90) {
+        } elseif ($lat == -90) {
             $pixelY = 256;
         } else {
             $latRad = deg2rad($lat);
@@ -262,7 +265,6 @@ class LatLng extends ObjectAbstract
 
         return $pixelYZoom;
     }
-
 
     /**
      * Converts pixels to longitude on a World's map according to Google
@@ -298,7 +300,7 @@ class LatLng extends ObjectAbstract
         $pixelY = $pixelYZoom / pow(2, $zoom);
         if ($pixelY == 0) {
             $lat = 90;
-        } else if ($pixelY == 256) {
+        } elseif ($pixelY == 256) {
             $lat = -90;
         } else {
             $cartY = $pixelY / 256 * 2 * pi();
@@ -315,8 +317,8 @@ class LatLng extends ObjectAbstract
      *
      * @param LatLng[] $coords
      *
-     * @return LatLng|null
      * @throws \yii\base\InvalidParamException
+     * @return LatLng|null
      */
     public static function getCenterOfCoordinates($coords)
     {
@@ -354,4 +356,4 @@ class LatLng extends ObjectAbstract
 
         return $bounds->getCenterCoordinates();
     }
-} 
+}

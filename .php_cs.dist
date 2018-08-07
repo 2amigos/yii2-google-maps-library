@@ -1,0 +1,52 @@
+<?php
+$header = <<<'EOF'
+
+@copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
+@link http://2amigos.us
+@license http://www.opensource.org/licenses/bsd-license.php New BSD License
+
+EOF;
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude(
+        [
+            '.git',
+            'docs',
+            'temp',
+            'tests',
+            'vendor',
+            'runtime'
+        ]
+    )
+    ->in(__DIR__);
+
+return PhpCsFixer\Config::create()
+    ->setRules(
+        [
+            '@PSR1' => true,
+            '@PSR2' => true,
+            'header_comment' => ['header' => $header],
+            'array_syntax' => ['syntax' => 'short'],
+            'combine_consecutive_unsets' => true,
+            'no_extra_consecutive_blank_lines' => [
+                'break',
+                'continue',
+                'extra',
+                'return',
+                'throw',
+                'use',
+                'parenthesis_brace_block',
+                'square_brace_block',
+                'curly_brace_block'
+            ],
+            'no_useless_else' => true,
+            'no_useless_return' => true,
+            'ordered_class_elements' => true,
+            'ordered_imports' => true,
+            'phpdoc_add_missing_param_annotation' => true,
+            'phpdoc_order' => true,
+            'phpdoc_align' => false
+
+        ]
+    )
+    ->setFinder($finder);

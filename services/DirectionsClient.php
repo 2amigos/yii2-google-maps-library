@@ -1,15 +1,19 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\services;
 
 use dosamigos\google\maps\ClientAbstract;
-use yii\helpers\ArrayHelper;
-use yii\base\InvalidConfigException;
 use Yii;
+use yii\base\InvalidConfigException;
+use yii\helpers\ArrayHelper;
 
 /**
  * DirectionsClient
@@ -30,7 +34,6 @@ class DirectionsClient extends ClientAbstract
      */
     public function __construct($config = [])
     {
-
         $this->params = ArrayHelper::merge(
             [
                 'origin' => null,
@@ -67,8 +70,8 @@ class DirectionsClient extends ClientAbstract
      *
      * @param array $params parameters for the request. These override [DirectionsRequest::params].
      *
-     * @return mixed|null
      * @throws \yii\base\InvalidConfigException
+     * @return mixed|null
      */
     public function lookup($params = [])
     {
@@ -80,4 +83,4 @@ class DirectionsClient extends ClientAbstract
 
         return parent::request();
     }
-} 
+}

@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\LatLngBounds;
@@ -64,16 +68,15 @@ class Rectangle extends RectangleOptions
      */
     public function getJs()
     {
-
         $js = $this->getInfoWindowJs();
 
         $js[] = "var {$this->getName()} = new google.maps.Rectangle({$this->getEncodedOptions()});";
 
-        foreach($this->events as $event) {
+        foreach ($this->events as $event) {
             /** @var \dosamigos\google\maps\Event $event */
             $js[] = $event->getJs($this->getName());
         }
 
         return implode("\n", $js);
     }
-} 
+}

@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\layers;
 
 use dosamigos\google\maps\ObjectAbstract;
@@ -40,7 +44,6 @@ class WeatherLayerOptions extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-
         $this->options = ArrayHelper::merge(
             [
                 'clickable' => null,
@@ -72,8 +75,9 @@ class WeatherLayerOptions extends ObjectAbstract
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function setLabelColor($value) {
-        if(!LabelColor::getIsValid($value)) {
+    public function setLabelColor($value)
+    {
+        if (!LabelColor::getIsValid($value)) {
             throw new InvalidConfigException('Unknown "labelColor" value');
         }
         $this->options['labelColor'] = new JsExpression($value);
@@ -101,8 +105,9 @@ class WeatherLayerOptions extends ObjectAbstract
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function setWindSpeedUnits($value) {
-        if(!WindSpeedUnits::getIsValid($value)) {
+    public function setWindSpeedUnits($value)
+    {
+        if (!WindSpeedUnits::getIsValid($value)) {
             throw new InvalidConfigException('Unknown "windSpeedUnits" value');
         }
         $this->options['windSpeedUnits'] = new JsExpression($value);

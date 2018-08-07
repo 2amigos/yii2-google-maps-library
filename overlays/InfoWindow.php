@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\overlays;
 
 use yii\base\InvalidConfigException;
@@ -60,4 +64,4 @@ class InfoWindow extends InfoWindowOptions
         $options = array_filter($infoWindowOptions->options);
         $this->options = ArrayHelper::merge($this->options, $options);
     }
-} 
+}

@@ -187,6 +187,15 @@ To configure the Google Map key or other options like language, version, library
 
 To get key, please visit https://code.google.com/apis/console/
 
+## Using code sniffer
+
+Once you do `composer install -o`, the `php-cs-fixer` tool will be added to your vendor file. To fix the formatting of 
+your php files, simply do:
+
+```bash 
+ ./vendor/bin/php-cs-fixer --config=.php_cs.dist fix
+```
+
 ## Resources
 
  * [Google Maps API Reference](https://developers.google.com/maps/documentation/)

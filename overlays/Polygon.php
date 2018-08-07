@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps\overlays;
 
+namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\LatLngBounds;
 use dosamigos\google\maps\OverlayTrait;
@@ -25,7 +28,6 @@ use yii\helpers\ArrayHelper;
 class Polygon extends PolygonOptions
 {
     use OverlayTrait;
-
 
     /**
      * Sets the options based on a MarkerOptions object
@@ -66,7 +68,6 @@ class Polygon extends PolygonOptions
      */
     public function getJs()
     {
-
         $js = $this->getInfoWindowJs();
 
         $js[] = "var {$this->getName()} = new google.maps.Polygon({$this->getEncodedOptions()});";
@@ -75,7 +76,6 @@ class Polygon extends PolygonOptions
             /** @var \dosamigos\google\maps\Event $event */
             $js[] = $event->getJs($this->getName());
         }
-
 
         return implode("\n", $js);
     }
@@ -157,4 +157,4 @@ class Polygon extends PolygonOptions
         }
         return false;
     }
-} 
+}

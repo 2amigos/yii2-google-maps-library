@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\LatLng;
@@ -115,8 +119,8 @@ class Marker extends MarkerOptions
      *
      * @param Marker[] $markers
      *
-     * @return LatLng|null
      * @throws \yii\base\InvalidParamException
+     * @return LatLng|null
      */
     public static function getCenterOfMarkers($markers)
     {
@@ -131,7 +135,6 @@ class Marker extends MarkerOptions
         return LatLng::getCenterOfCoordinates($coords);
     }
 
-
     /**
      * Returns the center coordinates of the boundaries of an array of Markers
      *
@@ -145,5 +148,4 @@ class Marker extends MarkerOptions
 
         return $bounds->getCenterCoordinates();
     }
-
-} 
+}

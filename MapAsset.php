@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
 use Yii;
@@ -50,23 +54,22 @@ class MapAsset extends AssetBundle
      */
     public function init()
     {
+        // BACKWARD COMPATIBILITY
+        // To configure please, add `googleMapsApiKey` parameter to your application configuration
+        // file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
+        $key = @Yii::$app->params['googleMapsApiKey'];
+        // To configure please, add `googleMapsLibraries` parameter to your application configuration
+        $libraries = @Yii::$app->params['googleMapsLibraries'];
+        // To configure please, add `googleMapsLanguage` parameter to your application configuration
+        $language = @Yii::$app->params['googleMapsLanguage'];
 
-	// BACKWARD COMPATIBILITY
-	// To configure please, add `googleMapsApiKey` parameter to your application configuration
-	// file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
-	$key = @Yii::$app->params['googleMapsApiKey'];
-	// To configure please, add `googleMapsLibraries` parameter to your application configuration
-	$libraries = @Yii::$app->params['googleMapsLibraries'];
-	// To configure please, add `googleMapsLanguage` parameter to your application configuration
-	$language = @Yii::$app->params['googleMapsLanguage'];
-
-	$this->options = array_merge($this->options, array_filter([
+        $this->options = array_merge($this->options, array_filter([
             'key' => $key,
             'libraries' => $libraries,
             'language' => $language
-	]));
-	// BACKWARD COMPATIBILITY
+    ]));
+        // BACKWARD COMPATIBILITY
 
         $this->js[] = '//maps.googleapis.com/maps/api/js?'. http_build_query($this->options);
     }
-} 
+}

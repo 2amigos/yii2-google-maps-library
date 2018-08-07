@@ -1,14 +1,18 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
+use yii\base\BaseObject;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
-use yii\base\BaseObject;
 
 /**
  * Event
@@ -38,7 +42,6 @@ class Event extends BaseObject
      * @var string the type of event. Defaults to [[EventType::DEFAULT_EVENT]]
      */
     private $_type = EventType::DEFAULT_EVENT;
-
 
     /**
      * @inheritdoc

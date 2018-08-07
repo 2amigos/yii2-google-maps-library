@@ -1,17 +1,14 @@
 <?php
-/**
+
+/*
  *
- * MarkerOptions.php
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
+ * @link http://2amigos.us
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  *
- * Date: 23/09/14
- * Time: 13:00
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
- * @link http://www.2amigos.us/
  */
 
 namespace dosamigos\google\maps\overlays;
-
 
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\ObjectAbstract;
@@ -66,7 +63,6 @@ class MarkerOptions extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-
         $this->options = ArrayHelper::merge(
             [
                 'anchorPoint' => null,
@@ -186,4 +182,4 @@ class MarkerOptions extends ObjectAbstract
     {
         return $this->position instanceof LatLng ? $this->position->getLng() : null;
     }
-} 
+}

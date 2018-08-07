@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace extensions\google\controls\maps;
 
+namespace extensions\google\controls\maps;
 
 use dosamigos\google\maps\ObjectAbstract;
 use dosamigos\google\maps\OptionsTrait;
@@ -39,5 +42,4 @@ class OverviewMapControlOptions extends ObjectAbstract
     {
         $this->options = ArrayHelper::merge(['opened' => null], $this->options);
     }
-
-} 
+}

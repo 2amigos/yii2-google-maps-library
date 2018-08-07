@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps\overlays;
 
+namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\OverlayTrait;
 use yii\base\InvalidConfigException;
@@ -30,8 +33,7 @@ class Circle extends CircleOptions
      */
     public function init()
     {
-
-        if($this->center == null) {
+        if ($this->center == null) {
             throw new InvalidConfigException('"center" cannot be null');
         }
     }
@@ -51,7 +53,6 @@ class Circle extends CircleOptions
      */
     public function getJs()
     {
-
         $js = $this->getInfoWindowJs();
 
         $js[] = "var {$this->getName()} = new google.maps.Circle({$this->getEncodedOptions()});";
@@ -61,7 +62,6 @@ class Circle extends CircleOptions
             $js[] = $event->getJs($this->getName());
         }
 
-
         return implode("\n", $js);
     }
-} 
+}

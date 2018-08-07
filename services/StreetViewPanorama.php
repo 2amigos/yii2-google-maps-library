@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps\services;
 
+namespace dosamigos\google\maps\services;
 
 use dosamigos\google\maps\LatLng;
 use yii\base\InvalidConfigException;
@@ -23,7 +26,6 @@ use yii\base\InvalidConfigException;
  */
 class StreetViewPanorama extends StreetViewPanoramaOptions
 {
-
     /**
      * @var string the HTML element id where to render the street panorama. Avoid the use of '#'
      * (jquery element selector)
@@ -51,14 +53,12 @@ class StreetViewPanorama extends StreetViewPanoramaOptions
         $this->options['position'] = $coord;
     }
 
-
     /**
      * The constructor js code for the Marker object
      * @return string
      */
     public function getJs()
     {
-
         $js = [];
 
         $js[] = "var {$this->getName()} = " .
@@ -71,4 +71,4 @@ class StreetViewPanorama extends StreetViewPanoramaOptions
 
         return implode("\n", $js);
     }
-} 
+}

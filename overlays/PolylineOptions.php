@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps\overlays;
 
+namespace dosamigos\google\maps\overlays;
 
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\ObjectAbstract;
@@ -54,7 +57,6 @@ class PolylineOptions extends ObjectAbstract
      */
     public function __construct($config = [])
     {
-
         $this->options = ArrayHelper::merge(
             [
                 'clickable' => null,
@@ -109,4 +111,4 @@ class PolylineOptions extends ObjectAbstract
             $this->addCoord($coord);
         }
     }*/
-} 
+}

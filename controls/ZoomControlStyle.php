@@ -1,11 +1,14 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps\controls;
 
+namespace dosamigos\google\maps\controls;
 
 /**
  * ZoomControlStyle
@@ -32,7 +35,8 @@ class ZoomControlStyle
      *
      * @return bool
      */
-    public static function getIsValid($value){
+    public static function getIsValid($value)
+    {
         return in_array(
             $value,
             [
@@ -42,4 +46,4 @@ class ZoomControlStyle
             ]
         );
     }
-} 
+}

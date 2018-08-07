@@ -1,16 +1,19 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
-namespace dosamigos\google\maps;
 
+namespace dosamigos\google\maps;
 
 use dosamigos\google\maps\overlays\Marker;
 use dosamigos\google\maps\overlays\Polygon;
-use yii\base\InvalidParamException;
 use yii\base\BaseObject;
+use yii\base\InvalidParamException;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -34,6 +37,15 @@ class LatLngBounds extends BaseObject
      */
     private $_ne = null;
 
+    /**
+     * Google String representations
+     * @return string
+     */
+    public function __toString()
+    {
+        return '((' . $this->getSouthWest()->getLat() . ', ' . $this->getSouthWest()->getLng() . '), ' .
+        '(' . $this->getNorthEast()->getLat() . ', ' . $this->getNorthEast()->getLng() . '))';
+    }
 
     /**
      * @inheritdoc
@@ -123,7 +135,6 @@ class LatLngBounds extends BaseObject
      */
     public function getCenterCoordinates()
     {
-
         return new LatLng(['lat' => $this->getCenterLat(), 'lng' => $this->getCenterLng()]);
     }
 
@@ -241,16 +252,6 @@ class LatLngBounds extends BaseObject
     }
 
     /**
-     * Google String representations
-     * @return string
-     */
-    public function __toString()
-    {
-        return '((' . $this->getSouthWest()->getLat() . ', ' . $this->getSouthWest()->getLng() . '), ' .
-        '(' . $this->getNorthEast()->getLat() . ', ' . $this->getNorthEast()->getLng() . '))';
-    }
-
-    /**
      * Creates a LatLngBounds object from a string representation of ((Lat, Lng), (Lat, Lng)) values. For example:
      *
      * ```
@@ -278,8 +279,8 @@ class LatLngBounds extends BaseObject
      *
      * @param LatLngBounds[] $boundaries
      * @param float $margin
-     * @return LatLngBounds
      * @throws \yii\base\InvalidParamException
+     * @return LatLngBounds
      */
     public static function getBoundsOfBounds($boundaries, $margin = 0.0)
     {
@@ -304,19 +305,19 @@ class LatLngBounds extends BaseObject
             $maxLng = $maxLng + $margin * ($maxLng - $minLng);
         }
 
-        return new self([
+        return new self(
+            [
                 'southWest' => new LatLng(['lat' => $minLat, 'lng' => $minLng]),
                 'northEast' => new LatLng(['lat' => $maxLat, 'lng' => $maxLng])]
         );
-
     }
 
     /**
      * Returns the boundaries of an array of LatLng objects
      * @param LatLng[] $coords
      * @param float $margin
-     * @return LatLngBounds
      * @throws \yii\base\InvalidParamException
+     * @return LatLngBounds
      */
     public static function getBoundsOfCoordinates($coords, $margin = 0.0)
     {
@@ -351,8 +352,8 @@ class LatLngBounds extends BaseObject
      * Returns the boundaries of an array of Marker objects
      * @param Marker[] $markers
      * @param float $margin
-     * @return LatLngBounds
      * @throws \yii\base\InvalidParamException
+     * @return LatLngBounds
      */
     public static function getBoundsOfMarkers($markers, $margin = 0.0)
     {
@@ -371,8 +372,8 @@ class LatLngBounds extends BaseObject
      * Returns the boundaries of an array of Polygon objects
      * @param Polygon[] $polygons array of Polygons
      * @param float $margin margin factor for the bounds
-     * @return LatLngBounds
      * @throws \yii\base\InvalidParamException
+     * @return LatLngBounds
      */
     public static function getBoundsOfPolygons($polygons, $margin = 0.0)
     {

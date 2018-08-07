@@ -18,3 +18,13 @@ nbproject
 # mac deployment helpers
 switch
 index
+
+# composer files
+composer.phar
+composer.lock
+
+# php cs fixer
+.php_cs.cache
+
+# composer vendor dir
+/vendor

@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
 use dosamigos\google\maps\overlays\InfoWindow;
@@ -28,7 +32,7 @@ trait OverlayTrait
      * Info window object attached to the object
      * @var InfoWindow
      */
-    protected $infoWindow = null;
+    protected $infoWindow;
     /**
      *
      * If the Info window is shared or not
@@ -82,7 +86,6 @@ trait OverlayTrait
      */
     protected function getInfoWindowJs()
     {
-
         $map = ArrayHelper::getValue($this->options, 'map');
 
         if ($this->infoWindow !== null) {
@@ -117,4 +120,4 @@ trait OverlayTrait
         }
         return [];
     }
-} 
+}

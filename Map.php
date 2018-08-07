@@ -1,18 +1,22 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
 use dosamigos\google\maps\overlays\Marker;
 use Yii;
 use yii\base\InvalidConfigException;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\web\JsExpression;
 use yii\web\View;
-use yii\helpers\ArrayHelper;
 
 /**
  * Map
@@ -202,7 +206,6 @@ class Map extends ObjectAbstract
         $bounds = LatLngBounds::getBoundsOfMarkers($markers, $margin);
 
         return $bounds->getZoom(min((int) $this->width, (int) $this->height), $default);
-
     }
 
     /**
@@ -226,7 +229,6 @@ class Map extends ObjectAbstract
 
         return implode("|", $coords);
     }
-
 
     /**
      * @return array
@@ -291,24 +293,6 @@ class Map extends ObjectAbstract
     public function getClosureScopedVariables()
     {
         return $this->_closure_scope_variables;
-    }
-
-    /**
-     * @return string
-     */
-    protected function getClosureScopedVariablesScript()
-    {
-        $js = [];
-        foreach ($this->getClosureScopedVariables() as $name => $value) {
-            if ($value !== null) {
-                if (!($value instanceof JsExpression) && strpos('{', $value) !== false) {
-                    $value = is_string($value) ? "'$value'" : $value;
-                }
-                $value = " = {$value}";
-            }
-            $js[] = "var {$name}{$value};";
-        }
-        return implode("\n", $js);
     }
 
     /**
@@ -460,5 +444,23 @@ class Map extends ObjectAbstract
     public function removePlugin($plugin)
     {
         return $this->getPlugins()->remove($plugin);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getClosureScopedVariablesScript()
+    {
+        $js = [];
+        foreach ($this->getClosureScopedVariables() as $name => $value) {
+            if ($value !== null) {
+                if (!($value instanceof JsExpression) && strpos('{', $value) !== false) {
+                    $value = is_string($value) ? "'$value'" : $value;
+                }
+                $value = " = {$value}";
+            }
+            $js[] = "var {$name}{$value};";
+        }
+        return implode("\n", $js);
     }
 }

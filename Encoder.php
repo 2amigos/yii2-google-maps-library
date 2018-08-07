@@ -1,9 +1,13 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
 /**
@@ -23,13 +27,17 @@ class Encoder
     private $zoomFactor = 2;
     private $verySmall = 0.00001;
     private $forceEndpoints = true;
-    private $zoomLevelBreaks = array();
+    private $zoomLevelBreaks = [];
 
     /**
      * All parameters are set with useful defaults.
      * If you actually want to understand them, see Mark McClure's detailed description.
      *
      * @see    http://facstaff.unca.edu/mcmcclur/GoogleMaps/EncodePolyline/algorithm.html
+     * @param mixed $numLevels
+     * @param mixed $zoomFactor
+     * @param mixed $verySmall
+     * @param mixed $forceEndpoints
      */
     public function __construct($numLevels = 18, $zoomFactor = 2, $verySmall = 0.00001, $forceEndpoints = true)
     {
@@ -62,7 +70,7 @@ class Encoder
         $dists = [];
 
         if (count($points) > 2) {
-            $stack[] = array(0, count($points) - 1);
+            $stack[] = [0, count($points) - 1];
             while (count($stack) > 0) {
                 $current = array_pop($stack);
                 $maxDist = 0;
@@ -78,8 +86,8 @@ class Encoder
                 }
                 if ($maxDist > $this->verySmall) {
                     $dists[$maxLoc] = $maxDist;
-                    array_push($stack, array($current[0], $maxLoc));
-                    array_push($stack, array($maxLoc, $current[1]));
+                    array_push($stack, [$current[0], $maxLoc]);
+                    array_push($stack, [$maxLoc, $current[1]]);
                 }
             }
         }
@@ -92,6 +100,29 @@ class Encoder
         $polyline->zoomFactor = $this->zoomFactor;
 
         return $polyline;
+    }
+
+    /**
+     * Helper function to encode coordinates when there is no required to configure the encoder
+     *
+     * @param LatLng[] $coords
+     *
+     * @return string
+     */
+    public static function encodeCoordinates($coords)
+    {
+        static $encoder;
+
+        if ($encoder == null) {
+            $encoder = new self();
+        }
+
+        $points = [];
+        foreach ($coords as $coord) {
+            $points[] = explode(',', $coord);
+        }
+
+        return "enc:{$encoder->encode($points)}";
     }
 
     /**
@@ -246,27 +277,4 @@ class Encoder
         $encodeString .= chr($finalValue);
         return $encodeString;
     }
-
-    /**
-     * Helper function to encode coordinates when there is no required to configure the encoder
-     *
-     * @param LatLng[] $coords
-     *
-     * @return string
-     */
-    public static function encodeCoordinates($coords)
-    {
-        static $encoder;
-
-        if ($encoder == null) {
-            $encoder = new self();
-        }
-
-        $points = [];
-        foreach ($coords as $coord) {
-            $points[] = explode(',', $coord);
-        }
-
-        return "enc:{$encoder->encode($points)}";
-    }
-} 
+}

@@ -4,6 +4,8 @@
     "keywords": ["yii", "extension", "library", "google", "maps"],
     "type": "yii-extension",
     "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "2amigOS! Consulting LLC",
@@ -12,13 +14,17 @@
         },
         {
             "name": "Antonio Ramirez",
-            "email": "ramirez.cobos@gmail.com",
+            "email": "antonio@2amigos.us",
             "homepage": "http://www.ramirezcobos.com"
         }
     ],
     "require": {
-        "yiisoft/yii2": "*",
-        "guzzlehttp/guzzle": "6.*"
+        "yiisoft/yii2": ">=2.0.13",
+        "guzzlehttp/guzzle": "6.*",
+        "roave/security-advisories": "dev-master"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.10@dev"
     },
     "autoload": {
         "psr-4": {

@@ -1,14 +1,17 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps\overlays;
 
-
-use dosamigos\google\maps\OverlayTrait;
 use dosamigos\google\maps\LatLngBounds;
+use dosamigos\google\maps\OverlayTrait;
 use yii\base\InvalidConfigException;
 
 /**
@@ -38,12 +41,10 @@ class GroundOverlay extends CircleOptions
      */
     public function init()
     {
-
         if ($this->url == null || $this->getBounds() == null) {
             throw new InvalidConfigException('"url" and/or "bounds" cannot be null');
         }
     }
-
 
     /**
      * Sets the [OverlayGround] bounds.
@@ -65,7 +66,6 @@ class GroundOverlay extends CircleOptions
         return $this->_bounds;
     }
 
-
     /**
      * Returns the js code to create a rectangle on a map
      * @return string
@@ -82,7 +82,6 @@ class GroundOverlay extends CircleOptions
             $js[] = $event->getJs($this->getName());
         }
 
-
         return implode("\n", $js);
     }
-} 
+}

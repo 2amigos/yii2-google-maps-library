@@ -1,18 +1,21 @@
 <?php
-/**
- * @copyright Copyright (c) 2014 2amigOS! Consulting Group LLC
+
+/*
+ *
+ * @copyright Copyright (c) 2013-2018 2amigOS! Consulting Group LLC
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ *
  */
+
 namespace dosamigos\google\maps;
 
-
 use yii\base\BaseObject;
+use yii\base\InvalidParamException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
 use yii\web\JsExpression;
-use yii\base\InvalidParamException;
 
 /**
  * ObjectAbstract
@@ -50,6 +53,58 @@ abstract class ObjectAbstract extends BaseObject
      * @var string holds the name of the object that is going to be used as js variable name.
      */
     private $_name;
+
+    /**
+     * @inheritdoc
+     */
+    public function __set($name, $value)
+    {
+        // setters go first
+        $setter = 'set' . $name;
+        if (method_exists($this, $setter)) {
+            $this->$setter($value);
+        } elseif (array_key_exists($name, $this->options)) {
+            $this->options[$name] = $value;
+        } else {
+            parent::__set($name, $value);
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function __get($name)
+    {
+        // getters go first
+        $getter = 'get' . $name;
+        if (method_exists($this, $getter)) {
+            return $this->$getter();
+        }
+
+        return ArrayHelper::keyExists($name, $this->options)
+            ? $this->options[$name]
+            : parent::__get($name);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function __isset($name)
+    {
+        return isset($this->options[$name]) || parent::__isset($name);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function __unset($name)
+    {
+        if (isset($this->options[$name])) {
+            $this->options[$name] = null;
+        } else {
+            parent::__unset($name);
+        }
+    }
 
     /**
      * Returns the javascript code required to initialize the object
@@ -124,7 +179,6 @@ abstract class ObjectAbstract extends BaseObject
                 continue;
             }
             $options[$key] = $this->encode($value);
-
         }
 
         return Json::encode($options);
@@ -154,60 +208,7 @@ abstract class ObjectAbstract extends BaseObject
             // a value may contain a valid JSON string
             return Json::decode($value);
         } catch (InvalidParamException $e) {
-
         }
         return $value;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function __set($name, $value)
-    {
-        // setters go first
-        $setter = 'set' . $name;
-        if (method_exists($this, $setter)) {
-            $this->$setter($value);
-        } elseif (array_key_exists($name, $this->options)) {
-            $this->options[$name] = $value;
-        } else {
-            parent::__set($name, $value);
-        }
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function __get($name)
-    {
-        // getters go first
-        $getter = 'get' . $name;
-        if (method_exists($this, $getter)) {
-            return $this->$getter();
-        }
-
-        return ArrayHelper::keyExists($name, $this->options)
-            ? $this->options[$name]
-            : parent::__get($name);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function __isset($name)
-    {
-        return isset($this->options[$name]) || parent::__isset($name);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function __unset($name)
-    {
-        if (isset($this->options[$name])) {
-            $this->options[$name] = null;
-        } else {
-            parent::__unset($name);
-        }
     }
 }
