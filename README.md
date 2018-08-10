@@ -38,10 +38,16 @@ or add
 to the `require` section of your `composer.json` file.
 
 ## Usage
+<<<<<<< HEAD
+=======
+
+IMPORTANT: In order to avoid any problem with "status":"OVER_QUERY_LIMIT", include the api key value on the request.
+>>>>>>> comment/readme
 
 Even though there will be plenty of examples on how to use it, here is one that will provide you with a glimpse of its
 usage:
 
+## Service
 ```php
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\services\DirectionsWayPoint;
@@ -147,6 +153,21 @@ $map->appendScript($bikeLayer->getJs());
 echo $map->display();
 ```
 
+## Client
+```php
+use dosamigos\google\maps\services\DirectionsClient;
+
+$direction = new DirectionsClient([
+    'params' => [
+        'language' => Yii::$app->language,
+        'origin' => 'street from',
+        'destination' => 'street to'
+    ]
+]);
+
+$data = $direction->lookup(); //get data from google.maps API
+```
+
 This extension has also a plugin architecture that allow us to enhance it, so expect plugins to be developed in near
 future too.
 
@@ -172,6 +193,7 @@ To configure the Google Map key or other options like language, version, library
 
 To get key, please visit https://code.google.com/apis/console/
 
+<<<<<<< HEAD
 ## Testing
 
 ```bash
@@ -189,11 +211,29 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [All Contributors](https://github.com/2amigos/yii2-google-maps-library/graphs/contributors)
 
 ## License
+=======
+## Using code sniffer
+
+Once you do `composer install -o`, the `php-cs-fixer` tool will be added to your vendor file. To fix the formatting of
+your php files, simply do:
+
+```bash
+ ./vendor/bin/php-cs-fixer --config=.php_cs.dist fix
+```
+
+## Resources
+>>>>>>> comment/readme
 
 The BSD License (BSD). Please see [License File](LICENSE.md) for more information.
 
+<<<<<<< HEAD
 <blockquote>
     <a href="http://www.2amigos.us"><img src="http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png"></a><br>
     <i>web development has never been so fun</i><br>
     <a href="http://www.2amigos.us">www.2amigos.us</a>
 </blockquote>
+=======
+> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)  
+<i>beyond software</i>  
+[www.2amigos.us](http://www.2amigos.us)
+>>>>>>> comment/readme
