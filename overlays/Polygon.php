@@ -10,6 +10,7 @@
 
 namespace dosamigos\google\maps\overlays;
 
+use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\LatLngBounds;
 use dosamigos\google\maps\OverlayTrait;
 use yii\helpers\ArrayHelper;
