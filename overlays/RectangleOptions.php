@@ -22,21 +22,21 @@ use yii\web\JsExpression;
  *
  * Eases the configuration of a rectangle
  *
- * @property LatLngBounds bounds The bounds.
- * @property boolean clickable Indicates whether this Rectangle handles mouse events. Defaults to true.
- * @property boolean draggable If set to true, the user can drag this rectangle over the map. Defaults to false.
- * @property boolean editable If set to true, the user can edit this rectangle by dragging the control points shown at
+ * @property LatLngBounds $bounds The bounds.
+ * @property boolean $clickable Indicates whether this Rectangle handles mouse events. Defaults to true.
+ * @property boolean $draggable If set to true, the user can drag this rectangle over the map. Defaults to false.
+ * @property boolean $editable If set to true, the user can edit this rectangle by dragging the control points shown at
  * the corners and on each edge. Defaults to false.
- * @property string fillColor The fill color. All CSS3 colors are supported except for extended named colors.
- * @property int fillOpacity The fill opacity between 0.0 and 1.0
- * @property string map Map on which to display Rectangle.
- * @property string strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
- * @property int strokeOpacity The stroke opacity between 0.0 and 1.0
- * @property string strokePosition The stroke position. Defaults to CENTER. This property is not supported on Internet
+ * @property string $fillColor The fill color. All CSS3 colors are supported except for extended named colors.
+ * @property int $fillOpacity The fill opacity between 0.0 and 1.0
+ * @property string $map Map on which to display Rectangle.
+ * @property string $strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
+ * @property int $strokeOpacity The stroke opacity between 0.0 and 1.0
+ * @property string $strokePosition The stroke position. Defaults to CENTER. This property is not supported on Internet
  * Explorer 8 and earlier.
- * @property int strokeWeight The stroke width in pixels.
- * @property boolean visible Whether this rectangle is visible on the map. Defaults to true.
- * @property int zIndex The zIndex compared to other polys.
+ * @property int $strokeWeight The stroke width in pixels.
+ * @property boolean $visible Whether this rectangle is visible on the map. Defaults to true.
+ * @property int $zIndex The zIndex compared to other polys.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

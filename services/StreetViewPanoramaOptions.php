@@ -21,25 +21,25 @@ use yii\helpers\ArrayHelper;
  *
  * Options defining the properties of a [StreetViewPanorama] object.
  *
- * @property boolean addressControl The enabled/disabled state of the address control.
- * @property StreetViewAddressControlOptions addressControlOptions The display options for the address control.
- * @property boolean clickToGo The enabled/disabled state of click-to-go.
- * @property boolean disableDefaultUI Enables/disables all default UI. May be overridden individually.
- * @property boolean disableDoubleClickZoom Enables/disables zoom on double click. Disabled by default.
- * @property boolean enableCloseButton If true, the close button is displayed. Disabled by default.
- * @property boolean imageDateControl The enabled/disabled state of the imagery acquisition date control. Disabled by
+ * @property boolean $addressControl The enabled/disabled state of the address control.
+ * @property StreetViewAddressControlOptions $addressControlOptions The display options for the address control.
+ * @property boolean $clickToGo The enabled/disabled state of click-to-go.
+ * @property boolean $disableDefaultUI Enables/disables all default UI. May be overridden individually.
+ * @property boolean $disableDoubleClickZoom Enables/disables zoom on double click. Disabled by default.
+ * @property boolean $enableCloseButton If true, the close button is displayed. Disabled by default.
+ * @property boolean $imageDateControl The enabled/disabled state of the imagery acquisition date control. Disabled by
  * default.
- * @property boolean linksControl The enabled/disabled state of the links control.
- * @property boolean panControl The enabled/disabled state of the pan control.
- * @property PanControlOptions panControlOptions The display options for the pan control.
- * @property string pano The panorama ID, which should be set when specifying a custom panorama.
- * @property [\dosamigos\google\maps\LatLng]|[\dosamigos\google\maps\LatLngLiteral] position The LatLng position of the
+ * @property boolean $linksControl The enabled/disabled state of the links control.
+ * @property boolean $panControl The enabled/disabled state of the pan control.
+ * @property PanControlOptions $panControlOptions The display options for the pan control.
+ * @property string $pano The panorama ID, which should be set when specifying a custom panorama.
+ * @property [\dosamigos\google\maps\LatLng]|[\dosamigos\google\maps\LatLngLiteral] $position The LatLng position of the
  * Street View panorama.
- * @property [StreetViewPov] pov The camera orientation, specified as heading and pitch, for the panorama.
- * @property boolean scrollwheel If false, disables scrollwheel zooming in Street View. The scrollwheel is enabled by default.
- * @property boolean visible If true, the Street View panorama is visible on load.
- * @property boolean zoomControl The enabled/disabled state of the zoom control.
- * @property boolean zoomControlOptions The display options for the zoom control.
+ * @property [StreetViewPov] $pov The camera orientation, specified as heading and pitch, for the panorama.
+ * @property boolean $scrollwheel If false, disables scrollwheel zooming in Street View. The scrollwheel is enabled by default.
+ * @property boolean $visible If true, the Street View panorama is visible on load.
+ * @property boolean $zoomControl The enabled/disabled state of the zoom control.
+ * @property boolean $zoomControlOptions The display options for the zoom control.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

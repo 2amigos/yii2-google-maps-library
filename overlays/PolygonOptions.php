@@ -21,31 +21,31 @@ use yii\web\JsExpression;
  *
  * Eases the configuration of a polygon or polygons
  *
- * @property boolean clickable Indicates whether this Polygon handles mouse events. Defaults to true.
- * @property boolean draggable If set to true, the user can drag this shape over the map. The geodesic property defines
+ * @property boolean $clickable Indicates whether this Polygon handles mouse events. Defaults to true.
+ * @property boolean $draggable If set to true, the user can drag this shape over the map. The geodesic property defines
  * the mode of dragging. Defaults to false.
- * @property boolean editable If set to true, the user can edit this shape by dragging the control points shown at the
+ * @property boolean $editable If set to true, the user can edit this shape by dragging the control points shown at the
  * vertices and on each segment. Defaults to false.
- * @property string fillColor The fill color. All CSS3 colors are supported except for extended named colors.
- * @property int fillOpacity The fill opacity between 0.0 and 1.0
- * @property boolean geodesic When true, edges of the polygon are interpreted as geodesic and will follow the curvature
+ * @property string $fillColor The fill color. All CSS3 colors are supported except for extended named colors.
+ * @property int $fillOpacity The fill opacity between 0.0 and 1.0
+ * @property boolean $geodesic When true, edges of the polygon are interpreted as geodesic and will follow the curvature
  * of the Earth. When false, edges of the polygon are rendered as straight lines in screen space. Note that the shape
  * of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of
  * the earth. Defaults to false.
- * @property string map Map name on which to display Polygon.
- * @property LatLng[] paths The ordered sequence of coordinates that designates a closed loop. Unlike polylines, a
+ * @property string $map Map name on which to display Polygon.
+ * @property LatLng[] $paths The ordered sequence of coordinates that designates a closed loop. Unlike polylines, a
  * polygon may consist of one or more paths. As a result, the paths property may specify one or more arrays of LatLng
  * coordinates. Paths are closed automatically; do not repeat the first vertex of the path as the last vertex. Simple
  * polygons may be defined using a single array of LatLngs. More complex polygons may specify an array of arrays. Any
  * simple arrays are converted into MVCArrays. Inserting or removing LatLngs from the MVCArray will automatically update
  * the polygon on the map.
- * @propperty string strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
- * @property int strokeOpacity The stroke opacity between 0.0 and 1.0
- * @property string strokePosition The stroke position. Defaults to [StrokePosition::CENTER]. This property is not
+ * @propperty string $strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
+ * @property int $strokeOpacity The stroke opacity between 0.0 and 1.0
+ * @property string $strokePosition The stroke position. Defaults to [StrokePosition::CENTER]. This property is not
  * supported on Internet Explorer 8 and earlier.
- * @property int strokeWeight The stroke width in pixels.
- * @property boolean visible Whether this polygon is visible on the map. Defaults to true.
- * @property int zIndex The zIndex compared to other polygones.
+ * @property int $strokeWeight The stroke width in pixels.
+ * @property boolean $visible Whether this polygon is visible on the map. Defaults to true.
+ * @property int $zIndex The zIndex compared to other polygones.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

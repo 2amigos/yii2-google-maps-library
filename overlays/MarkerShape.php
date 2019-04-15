@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
  * https://developers.google.com/maps/documentation/javascript/reference#Symbol
  *
  *
- * @property array coords The format of this attribute depends on the value of the type and follows the w3 AREA coords
+ * @property array $coords The format of this attribute depends on the value of the type and follows the w3 AREA coords
  * specification found at http://www.w3.org/TR/REC-html40/struct/objects.html#adef-coords.
  * The coords attribute is an array of integers that specify the pixel position of the shape relative to the top-left
  * corner of the target image. The coordinates depend on the value of type as follows:
@@ -33,7 +33,7 @@ use yii\helpers\ArrayHelper;
  * - rect: coords is [x1,y1,x2,y2] where x1,y1 are the coordinates of the upper-left corner of the rectangle and x2,y2
  * are the coordinates of the lower-right coordinates of the rectangle.
  *
- * @property string type Describes the shape's type and can be circle, poly or rect.
+ * @property string $type Describes the shape's type and can be circle, poly or rect.
  *
  *
  * @author Antonio Ramirez <hola@2amigos.us>

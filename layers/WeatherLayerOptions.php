@@ -21,13 +21,13 @@ use yii\web\JsExpression;
  *
  * This object defines the properties that can be set on a [WeatherLayer] object.
  *
- * @property boolean clickable If true, the layer receives mouse events. Default value is true.
- * @property string labelColor The color of labels on the weather layer. If this is not explicitly set, the label color
+ * @property boolean $clickable If true, the layer receives mouse events. Default value is true.
+ * @property string $labelColor The color of labels on the weather layer. If this is not explicitly set, the label color
  * is chosen automatically depending on the map type.
- * @property string map The map on which to display the layer.
- * @property boolean suppressInfoWindows Suppress the rendering of info windows when weather icons are clicked.
- * @property string temperatureUnits The units to use for temperature.
- * @property string windSpeedUnits The units to use for wind speed.
+ * @property string $map The map on which to display the layer.
+ * @property boolean $suppressInfoWindows Suppress the rendering of info windows when weather icons are clicked.
+ * @property string $temperatureUnits The units to use for temperature.
+ * @property string $windSpeedUnits The units to use for wind speed.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

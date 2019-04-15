@@ -20,9 +20,9 @@ use yii\web\JsExpression;
  *
  * Eases the configuration of a GroundOverlay
  *
- * @property boolean clickable Indicates whether this overlay handles mouse events. Defaults to true.
- * @property string map Map on which to display Circle.
- * @property int opacity TThe opacity of the overlay, expressed as a number between 0 and 1. Optional. Defaults to 1.
+ * @property boolean $clickable Indicates whether this overlay handles mouse events. Defaults to true.
+ * @property string $map Map on which to display Circle.
+ * @property int $opacity TThe opacity of the overlay, expressed as a number between 0 and 1. Optional. Defaults to 1.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

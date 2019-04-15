@@ -38,8 +38,9 @@ class LabelColor
             $value,
             [
                 static::BLACK,
-                static::WHITE
-            ]
+                static::WHITE,
+            ],
+            false
         );
     }
 }

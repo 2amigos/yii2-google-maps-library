@@ -22,26 +22,26 @@ use yii\web\JsExpression;
  * DirectionsRequest allows to easily configure a directions request js object. For further information please visit:
  * https://developers.google.com/maps/documentation/javascript/reference#DirectionsResult
  *
- * @property boolean avoidFerries If true, instructs the Directions service to avoid ferries where possible. Optional.
- * @property boolean avoidHighways If true, instructs the Directions service to avoid highways where possible. Optional.
- * @property boolean avoidTolls If true, instructs the Directions service to avoid toll roads where possible. Optional.
- * @property LatLng|string destination Location of destination. This can be specified as either a string to be geocoded
+ * @property boolean $avoidFerries If true, instructs the Directions service to avoid ferries where possible. Optional.
+ * @property boolean $avoidHighways If true, instructs the Directions service to avoid highways where possible. Optional.
+ * @property boolean $avoidTolls If true, instructs the Directions service to avoid toll roads where possible. Optional.
+ * @property LatLng|string $destination Location of destination. This can be specified as either a string to be geocoded
  * or a LatLng. Required.
- * @property boolean durationInTraffic Whether or not we should provide trip duration based on current traffic conditions.
+ * @property boolean $durationInTraffic Whether or not we should provide trip duration based on current traffic conditions.
  * Only available to Maps API for Work customers.
- * @property boolean optimizeWaypoints If set to true, the DirectionService will attempt to re-order the supplied
+ * @property boolean $optimizeWaypoints If set to true, the DirectionService will attempt to re-order the supplied
  * intermediate waypoints to minimize overall cost of the route. If waypoints are optimized, inspect
  * DirectionsRoute.waypoint_order in the response to determine the new ordering.
- * @property LatLng|string origin Location of origin. This can be specified as either a string to be geocoded or a
+ * @property LatLng|string $origin Location of origin. This can be specified as either a string to be geocoded or a
  * LatLng. Required.
- * @property boolean provideRouteAlternatives Whether or not route alternatives should be provided. Optional.
- * @property string region Region code used as a bias for geocoding requests. Optional.
- * @property array transitOptions Settings that apply only to requests where travelMode is TRANSIT. This object will
+ * @property boolean $provideRouteAlternatives Whether or not route alternatives should be provided. Optional.
+ * @property string $region Region code used as a bias for geocoding requests. Optional.
+ * @property array $transitOptions Settings that apply only to requests where travelMode is TRANSIT. This object will
  * have no effect for other travel modes.
- * @property boolean travelMode Type of routing requested. Required.
- * @property boolean unitSystem Preferred unit system to use when displaying distance. Defaults to the unit
+ * @property boolean $travelMode Type of routing requested. Required.
+ * @property boolean $unitSystem Preferred unit system to use when displaying distance. Defaults to the unit
  * system used in the country of origin.
- * @property DirectionsWayPoint[] waypoints Array of intermediate waypoints. Directions will be calculated from the
+ * @property DirectionsWayPoint[] $waypoints Array of intermediate waypoints. Directions will be calculated from the
  * origin to the destination by way of each waypoint in this array. The maximum allowed waypoints is 8, plus the origin,
  * and destination. Maps API for Work customers are allowed 23 waypoints, plus the origin, and destination.
  * Waypoints are not supported for transit directions. Optional.

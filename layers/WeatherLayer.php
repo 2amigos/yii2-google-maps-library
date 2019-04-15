@@ -30,7 +30,7 @@ class WeatherLayer extends WeatherLayerOptions
      */
     public function init()
     {
-        if ($this->map == null) {
+        if (null === $this->map) {
             throw new InvalidConfigException('"map" cannot be null');
         }
     }

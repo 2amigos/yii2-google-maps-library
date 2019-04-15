@@ -20,15 +20,15 @@ use yii\helpers\ArrayHelper;
  *
  * Object for the anonymous constructor of an icon. Passing an array with same options to the Marker would also do.
  *
- * @property Point anchor The position at which to anchor an image in correspondance to the location of the marker on the map.
+ * @property Point $anchor The position at which to anchor an image in correspondance to the location of the marker on the map.
  * By default, the anchor is located along the center point of the bottom of the image.
- * @property Point origin The position of the image within a sprite, if any. By default, the origin is located at the top left
+ * @property Point $origin The position of the image within a sprite, if any. By default, the origin is located at the top left
  * corner of the image (0, 0).
- * @property Size scaledSize The size of the entire image after scaling, if any. Use this property to stretch/shrink an image
+ * @property Size $scaledSize The size of the entire image after scaling, if any. Use this property to stretch/shrink an image
  * or a sprite.
- * @property Point size The display size of the sprite or image. When using sprites, you must specify the sprite size. If the
+ * @property Point $size The display size of the sprite or image. When using sprites, you must specify the sprite size. If the
  * size is not provided, it will be set when the image loads.
- * @property string url The URL of the image or sprite sheet.
+ * @property string $url The URL of the image or sprite sheet.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

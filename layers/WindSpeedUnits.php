@@ -39,7 +39,8 @@ class WindSpeedUnits
                 static::KILOMETERS_PER_HOUR,
                 static::METERS_PER_SECOND,
                 static::MILES_PER_HOUR
-            ]
+            ],
+            false
         );
     }
 }

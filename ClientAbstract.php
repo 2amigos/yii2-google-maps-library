@@ -82,8 +82,8 @@ abstract class ClientAbstract extends BaseObject
             $response = $this->getClient()
                 ->get($this->getUrl(), ['query' => $params], $options);
 
-            return $this->format == 'json'
-                ? json_decode($response->getBody())
+            return trim($this->format) === 'json'
+                ? json_decode($response->getBody(), true)
                 : simplexml_load_string($response->getBody());
         } catch (RequestException $e) {
             return null;
@@ -96,7 +96,7 @@ abstract class ClientAbstract extends BaseObject
      */
     protected function getClient()
     {
-        if ($this->_guzzle == null) {
+        if ($this->_guzzle === null) {
             $this->_guzzle = new HttpClient();
         }
         return $this->_guzzle;

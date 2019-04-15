@@ -42,7 +42,8 @@ class MapTypeId
                 static::ROADMAP,
                 static::SATELLITE,
                 static::TERRAIN
-            ]
+            ],
+            false
         );
     }
 }

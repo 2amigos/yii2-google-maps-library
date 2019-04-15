@@ -39,7 +39,8 @@ class TemperatureUnit
             [
                 static::CELSIUS,
                 static::FAHRENHEIT
-            ]
+            ],
+            false
         );
     }
 }

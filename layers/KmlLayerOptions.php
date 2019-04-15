@@ -20,15 +20,15 @@ use yii\web\JsExpression;
  *
  * This object defines the properties that can be set on a [KmlLayer] object.
  *
- * @property boolean clickable If true, the layer receives mouse events. Default value is true.
- * @property string map The map on which to display the layer.
- * @property boolean preserveViewport By default, the input map is centered and zoomed to the bounding box of the
+ * @property boolean $clickable If true, the layer receives mouse events. Default value is true.
+ * @property string $map The map on which to display the layer.
+ * @property boolean $preserveViewport By default, the input map is centered and zoomed to the bounding box of the
  * contents of the layer. If this option is set to true, the viewport is left unchanged, unless the map's center and
  * zoom were never set.
- * @property boolean screenOverlays Whether to render the screen overlays. Default true.
- * @property boolean suppressInfoWindows Suppress the rendering of info windows when layer features are clicked.
- * @property string url The URL of the KML document to display.
- * @property int zIndex The z-index of the layer.
+ * @property boolean $screenOverlays Whether to render the screen overlays. Default true.
+ * @property boolean $suppressInfoWindows Suppress the rendering of info windows when layer features are clicked.
+ * @property string $url The URL of the KML document to display.
+ * @property int $zIndex The z-index of the layer.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

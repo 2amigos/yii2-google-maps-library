@@ -18,12 +18,12 @@ use yii\web\JsExpression;
 /**
  * PanoramioLayerOptions
  *
- * @property boolean clickable If true, the layer receives mouse events. Default value is true.
- * @property string map The map on which to display the layer.
- * @property boolean suppressInfoWindows Suppress the rendering of info windows when layer features are clicked.
- * @property string tag A panoramio tag used to filter the photos which are displayed. Only photos which have been
+ * @property boolean $clickable If true, the layer receives mouse events. Default value is true.
+ * @property string $map The map on which to display the layer.
+ * @property boolean $suppressInfoWindows Suppress the rendering of info windows when layer features are clicked.
+ * @property string $tag A panoramio tag used to filter the photos which are displayed. Only photos which have been
  * tagged with the supplied string will be shown.
- * @property string userId A Panoramio user ID. If provided, only photos by this user will be displayed on the map. If
+ * @property string $userId A Panoramio user ID. If provided, only photos by this user will be displayed on the map. If
  * both a tag and user ID are provided, the tag will take precedence.
  *
  * @author Antonio Ramirez <hola@2amigos.us>

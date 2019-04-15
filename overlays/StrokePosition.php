@@ -41,7 +41,8 @@ class StrokePosition
                 static::CENTER,
                 static::INSIDE,
                 static::OUTSIDE,
-            ]
+            ],
+            false
         );
     }
 }

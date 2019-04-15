@@ -77,7 +77,7 @@ class DirectionsClient extends ClientAbstract
     {
         $this->params = ArrayHelper::merge($this->params, $params);
 
-        if ($this->params['origin'] == null && $this->params['destination'] == null) {
+        if ($this->params['origin'] === null && $this->params['destination'] === null) {
             throw new InvalidConfigException('"origin" and "destination" must be set for the request. Both cannot be null');
         }
 

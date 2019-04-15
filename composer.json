@@ -1,34 +1,45 @@
 {
     "name": "2amigos/yii2-google-maps-library",
     "description": "Google Maps API library for Yii2.",
-    "keywords": ["yii", "extension", "library", "google", "maps"],
+    "keywords": [
+        "yii",
+        "extension",
+        "library",
+        "google",
+        "maps"
+    ],
     "type": "yii-extension",
     "license": "BSD-3-Clause",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "authors": [
         {
-            "name": "2amigOS! Consulting LLC",
+            "name": "2amigos",
             "email": "hola@2amigos.us",
             "homepage": "http://2amigos.us"
         },
         {
             "name": "Antonio Ramirez",
-            "email": "antonio@2amigos.us",
-            "homepage": "http://www.ramirezcobos.com"
+            "email": "hola@2amigos.us",
+            "homepage": "https://2amigos.us"
         }
     ],
     "require": {
+        "ext-json": "*",
         "yiisoft/yii2": ">=2.0.13",
         "guzzlehttp/guzzle": "6.*",
-        "roave/security-advisories": "dev-master"
+        "ext-SimpleXML": "^7.2"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.10@dev"
+        "friendsofphp/php-cs-fixer": "^2.10@dev",
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "dosamigos\\google\\maps\\": ""
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }

@@ -54,7 +54,8 @@ class MapTypeControlStyle
                 static::DEFAULT_STYLE,
                 static::DROPDOWN_MENU,
                 static::HORIZONTAL_BAR
-            ]
+            ],
+            false
         );
     }
 }

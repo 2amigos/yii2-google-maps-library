@@ -46,7 +46,8 @@ class SymbolPath
                 static::BACKWARD_OPEN_ARROW,
                 static::FORWARD_CLOSED_ARROW,
                 static::FORWARD_OPEN_ARROW
-            ]
+            ],
+            false
         );
     }
 }

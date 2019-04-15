@@ -43,7 +43,8 @@ class ZoomControlStyle
                 static::DEFAULT_STYLE,
                 static::LARGE,
                 static::SMALL
-            ]
+            ],
+            false
         );
     }
 }

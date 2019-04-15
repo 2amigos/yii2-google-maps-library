@@ -35,7 +35,7 @@ class Rectangle extends RectangleOptions
      */
     public function init()
     {
-        if ($this->bounds == null) {
+        if (null === $this->bounds) {
             throw new InvalidConfigException('"$bounds" cannot be null');
         }
     }

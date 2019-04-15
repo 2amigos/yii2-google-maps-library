@@ -20,30 +20,30 @@ use yii\web\JsExpression;
  * Google DirectionsRendered object. For further information please visit:
  * https://developers.google.com/maps/documentation/javascript/reference#DirectionsRenderer
  *
- * @property boolean draggable If true, allows the user to drag and modify the paths of routes rendered by this
+ * @property boolean $draggable If true, allows the user to drag and modify the paths of routes rendered by this
  * DirectionsRenderer.
- * @property boolean hideRouteList This property indicates whether the renderer should provide UI to select amongst
+ * @property boolean $hideRouteList This property indicates whether the renderer should provide UI to select amongst
  * alternative routes. By default, this flag is false and a user-selectable list of routes will be shown in the
  * directions' associated panel. To hide that list, set hideRouteList to true.
  * @property\dosamigos\google\maps\overlays\InfoWindow infoWindow The InfoWindow in which to render text information when a marker is clicked.
  * Existing info window content will be overwritten and its position moved. If no info window is specified, the
  * DirectionsRenderer will create and use its own info window. This property will be ignored if suppressInfoWindows
  * is set to true.
- * @property string map Map on which to display the directions.
- * @property array markerOptions Options for the markers. All markers rendered by the DirectionsRenderer will use
+ * @property string $map Map on which to display the directions.
+ * @property array $markerOptions Options for the markers. All markers rendered by the DirectionsRenderer will use
  * these options.
- * @property string panel The <div> in which to display the directions steps.
- * @property array polylineOptions Options for the polylines. All polylines rendered by the DirectionsRenderer will
+ * @property string $panel The <div> in which to display the directions steps.
+ * @property array $polylineOptions Options for the polylines. All polylines rendered by the DirectionsRenderer will
  * use these options.
- * @property boolean preserveViewport By default, the input map is centered and zoomed to the bounding box of this
+ * @property boolean $preserveViewport By default, the input map is centered and zoomed to the bounding box of this
  * set of directions. If this option is set to true, the viewport is left unchanged, unless the map's center and
  * zoom were never set.
- * @property int routeIndex The index of the route within the DirectionsResult object. The default value is 0.
+ * @property int $routeIndex The index of the route within the DirectionsResult object. The default value is 0.
  * @property boolean suppressBicyclingLayer Suppress the rendering of the BicyclingLayer when bicycling directions
  * are requested.
- * @property boolean suppressInfoWindows Suppress the rendering of info windows.
- * @property boolean suppressMarkers Suppress the rendering of markers.
- * @property boolean suppressPolylines Suppress the rendering of polylines.
+ * @property boolean $suppressInfoWindows Suppress the rendering of info windows.
+ * @property boolean $suppressMarkers Suppress the rendering of markers.
+ * @property boolean $suppressPolylines Suppress the rendering of polylines.
  *
  *
  * @author Antonio Ramirez <hola@2amigos.us>

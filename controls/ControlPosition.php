@@ -64,7 +64,8 @@ class ControlPosition
                 static::TOP_CENTER,
                 static::TOP_LEFT,
                 static::TOP_RIGHT
-            ]
+            ],
+            false
         );
     }
 }

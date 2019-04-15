@@ -44,7 +44,8 @@ class TravelMode
                 static::WALKING,
                 static::TRANSIT,
                 static::BICYCLING
-            ]
+            ],
+            false
         );
     }
 }

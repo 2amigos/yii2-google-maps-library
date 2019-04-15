@@ -21,25 +21,25 @@ use yii\web\JsExpression;
  *
  * Eases the configuration of a polyline
  *
- * @property boolean clickable Indicates whether this Polyline handles mouse events. Defaults to true.
- * @property boolean draggable If set to true, the user can drag this shape over the map. The geodesic property defines
+ * @property boolean $clickable Indicates whether this Polyline handles mouse events. Defaults to true.
+ * @property boolean $draggable If set to true, the user can drag this shape over the map. The geodesic property defines
  * the mode of dragging. Defaults to false.
- * @property boolean editable If set to true, the user can edit this shape by dragging the control points shown at the
+ * @property boolean $editable If set to true, the user can edit this shape by dragging the control points shown at the
  * vertices and on each segment. Defaults to false.
- * @property boolean geodesic When true, edges of the polygon are interpreted as geodesic and will follow the curvature
+ * @property boolean $geodesic When true, edges of the polygon are interpreted as geodesic and will follow the curvature
  * of the Earth. When false, edges of the polygon are rendered as straight lines in screen space. Note that the shape
  * of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of
  * the earth. Defaults to false.
- * @property IconSequence[] icons The icons to be rendered along the polyline.
- * @property string map Map name on which to display Polyline.
- * @property LatLng[] path The ordered sequence of coordinates of the Polyline. This path may be specified using either
+ * @property IconSequence[] $icons The icons to be rendered along the polyline.
+ * @property string $map Map name on which to display Polyline.
+ * @property LatLng[] $path The ordered sequence of coordinates of the Polyline. This path may be specified using either
  * a simple array of LatLngs, or an MVCArray of LatLngs. Note that if you pass a simple array, it will be converted to
  * an MVCArray Inserting or removing LatLngs in the MVCArray will automatically update the polyline on the map.
- * @property string strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
- * @property int strokeOpacity The stroke opacity between 0.0 and 1.0
- * @property int strokeWeight The stroke width in pixels.
- * @property boolean visible Whether this polygon is visible on the map. Defaults to true.
- * @property int zIndex The zIndex compared to other polylines.
+ * @property string $strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
+ * @property int $strokeOpacity The stroke opacity between 0.0 and 1.0
+ * @property int $strokeWeight The stroke width in pixels.
+ * @property boolean $visible Whether this polygon is visible on the map. Defaults to true.
+ * @property int $zIndex The zIndex compared to other polylines.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 

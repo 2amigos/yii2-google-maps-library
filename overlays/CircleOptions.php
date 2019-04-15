@@ -22,22 +22,22 @@ use yii\web\JsExpression;
  *
  * Eases the configuration of a rectangle
  *
- * @property LatLng center The center. Required.
- * @property boolean clickable Indicates whether this Circle handles mouse events. Defaults to true.
- * @property boolean draggable If set to true, the user can drag this circle over the map. Defaults to false.
- * @property boolean editable If set to true, the user can edit this circle by dragging the control points shown at the
+ * @property LatLng $center The center. Required.
+ * @property boolean $clickable Indicates whether this Circle handles mouse events. Defaults to true.
+ * @property boolean $draggable If set to true, the user can drag this circle over the map. Defaults to false.
+ * @property boolean $editable If set to true, the user can edit this circle by dragging the control points shown at the
  * center and around the circumference of the circle. Defaults to false.
- * @property string fillColor The fill color. All CSS3 colors are supported except for extended named colors.
- * @property int fillOpacity The fill opacity between 0.0 and 1.0
- * @property string map Map on which to display Circle.
- * @property int radius The radius in meters on the Earth's surface
- * @property string strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
- * @property int strokeOpacity The stroke opacity between 0.0 and 1.0
- * @property string strokePosition The stroke position. Defaults to [StrokePosition::POSITION_CENTER]. This property is not
+ * @property string $fillColor The fill color. All CSS3 colors are supported except for extended named colors.
+ * @property int $fillOpacity The fill opacity between 0.0 and 1.0
+ * @property string $map Map on which to display Circle.
+ * @property int $radius The radius in meters on the Earth's surface
+ * @property string $strokeColor The stroke color. All CSS3 colors are supported except for extended named colors.
+ * @property int $strokeOpacity The stroke opacity between 0.0 and 1.0
+ * @property string $strokePosition The stroke position. Defaults to [StrokePosition::POSITION_CENTER]. This property is not
  * supported on Internet Explorer 8 and earlier.
- * @property int strokeWeight The stroke width in pixels.
- * @property boolean visible Whether this circle is visible on the map. Defaults to true.
- * @property int zIndex The zIndex compared to other circles.
+ * @property int $strokeWeight The stroke width in pixels.
+ * @property boolean $visible Whether this circle is visible on the map. Defaults to true.
+ * @property int $zIndex The zIndex compared to other circles.
  *
  * @author Antonio Ramirez <hola@2amigos.us>
  * 
