@@ -41,8 +41,8 @@ use yii\helpers\ArrayHelper;
  * @property boolean zoomControl The enabled/disabled state of the zoom control.
  * @property boolean zoomControlOptions The display options for the zoom control.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\services
  */

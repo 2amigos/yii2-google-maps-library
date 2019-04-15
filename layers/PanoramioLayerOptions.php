@@ -26,8 +26,8 @@ use yii\web\JsExpression;
  * @property string userId A Panoramio user ID. If provided, only photos by this user will be displayed on the map. If
  * both a tag and user ID are provided, the tag will take precedence.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\layers
  */

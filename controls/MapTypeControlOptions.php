@@ -41,8 +41,8 @@ use yii\web\JsExpression;
  * The default position is [ControlPosition::TOP_RIGHT].
  * @property string style. Used to select what style of map type control to display. Use [MapTypeControlStyle] for it.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\controls
  */

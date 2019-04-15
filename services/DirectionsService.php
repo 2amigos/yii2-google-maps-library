@@ -18,8 +18,8 @@ use yii\base\InvalidConfigException;
  *
  * Object to render the service for computing directiosn between two or more places.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

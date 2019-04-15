@@ -46,8 +46,8 @@ use yii\web\JsExpression;
  * and destination. Maps API for Work customers are allowed 23 waypoints, plus the origin, and destination.
  * Waypoints are not supported for transit directions. Optional.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

@@ -30,8 +30,8 @@ use yii\helpers\ArrayHelper;
  * size is not provided, it will be set when the image loads.
  * @property string url The URL of the image or sprite sheet.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

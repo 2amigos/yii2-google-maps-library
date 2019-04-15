@@ -19,8 +19,8 @@ use yii\base\InvalidConfigException;
  *
  * Object to render rectangular image overlay on the map.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

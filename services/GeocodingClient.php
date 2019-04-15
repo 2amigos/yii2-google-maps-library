@@ -22,8 +22,8 @@ use yii\helpers\ArrayHelper;
  * Utility class to call Google's Geocoding API to get address geo information + reverse lookup. For further information
  * please visit https://developers.google.com/maps/documentation/geocoding/
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

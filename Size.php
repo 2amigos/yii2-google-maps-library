@@ -18,8 +18,8 @@ use yii\base\InvalidConfigException;
  *
  * Two-dimensional size, where width is the distance on the x-axis, and height is the distance on the y-axis.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

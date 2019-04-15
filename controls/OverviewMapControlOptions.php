@@ -26,8 +26,8 @@ use yii\helpers\ArrayHelper;
  * @property boolean opened Whether the control should display in opened mode or collapsed (minimized) mode. By default,
  * the control is closed.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package extensions\google\controls\maps
  */

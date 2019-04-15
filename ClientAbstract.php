@@ -21,8 +21,8 @@ use yii\base\BaseObject;
  *
  * Base class for those objects that make requests to the Google Web Services API
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

@@ -36,8 +36,8 @@ use yii\helpers\ArrayHelper;
  * @property string type Describes the shape's type and can be circle, poly or rect.
  *
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

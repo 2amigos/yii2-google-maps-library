@@ -21,8 +21,8 @@ use yii\helpers\ArrayHelper;
  * A Google Maps Rectangle.
  *
  * @see https://developers.google.com/maps/documentation/javascript/reference?csw=1#RectangleOptions
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

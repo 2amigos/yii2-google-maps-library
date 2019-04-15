@@ -81,8 +81,8 @@ use yii\web\View;
  * @property boolean zoomControlThe enabled/disabled state of the Zoom control.
  * @property [\doamigos\maps\controls\ZoomControlOptions] zoomControlOptions The display options for the Zoom control.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

@@ -47,8 +47,8 @@ use yii\helpers\ArrayHelper;
  * front of markers with lower values. By default, markers are displayed according to their vertical position on screen,
  * with lower markers appearing in front of markers further up the screen.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

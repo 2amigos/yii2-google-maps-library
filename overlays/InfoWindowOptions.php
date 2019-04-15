@@ -41,8 +41,8 @@ use yii\web\JsExpression;
  * InfoWindows of lower latitudes appearing in front of InfoWindows at higher latitudes. InfoWindows are always
  * displayed in front of markers.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

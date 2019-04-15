@@ -29,8 +29,8 @@ use yii\helpers\ArrayHelper;
  * in the zoomControlOptions or panControlOptions, the Street View control will be displayed as part of the navigation
  * controls. Otherwise, it will be displayed separately.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

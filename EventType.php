@@ -15,8 +15,8 @@ namespace dosamigos\google\maps;
  *
  * Describes the different valid event types supported.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

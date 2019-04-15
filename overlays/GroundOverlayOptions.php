@@ -24,8 +24,8 @@ use yii\web\JsExpression;
  * @property string map Map on which to display Circle.
  * @property int opacity TThe opacity of the overlay, expressed as a number between 0 and 1. Optional. Defaults to 1.
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

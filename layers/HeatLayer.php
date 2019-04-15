@@ -2,7 +2,7 @@
 
 /*
  *
- * @copyright Copyright (c) 2013-2019 2amigos 
+ * @copyright Copyright (c) 2013-2019 2amigos
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  *
@@ -11,23 +11,23 @@
 namespace dosamigos\google\maps\layers;
 
 use yii\base\InvalidConfigException;
-
 /**
- * KmlLayer
+ * HeatLayer
  *
- * A KmlLayer adds geographic markup to the map from a KML, KMZ or GeoRSS file that is hosted on a publicly accessible
- * web server. A KmlFeatureData object is provided for each feature when clicked.
+ * A heatmap is a visualization used to depict the intensity of data at geographical points. When the Heatmap Layer is
+ * enabled, a colored overlay will appear on top of the map. By default, areas of higher intensity will be colored red,
+ * and areas of lower intensity will appear green.
  *
  * For further information please visit its
  * [documentation](https://developers.google.com/maps/documentation/javascript/reference#KmlLayer) at Google.
  *
  *
  * @author Antonio Ramirez <hola@2amigos.us>
- * 
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps\layers
  */
-class KmlLayer extends KmlLayerOptions
+class HeatLayer extends HeatLayerOptions
 {
     /**
      * @inheritdoc
@@ -35,11 +35,10 @@ class KmlLayer extends KmlLayerOptions
      */
     public function init()
     {
-        if ($this->map == null) {
+        if (null === $this->map) {
             throw new InvalidConfigException('"map" cannot be null');
         }
     }
-
     /**
      * Returns the required initialization javascript code
      *
@@ -49,7 +48,6 @@ class KmlLayer extends KmlLayerOptions
     {
         $name = $this->getName();
         $options = $this->getEncodedOptions();
-
-        return "var {$name} = new google.maps.KmlLayer({$options});";
+        return "var {$name} = new google.maps.visualization.HeatmapLayer({$options});";
     }
 }

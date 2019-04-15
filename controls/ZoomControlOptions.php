@@ -30,8 +30,8 @@ use yii\web\JsExpression;
  * @property string style Style id. Used to select what style of zoom control to display. Is one of the values of
  * [ZoomControlStyle].
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ * 
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */

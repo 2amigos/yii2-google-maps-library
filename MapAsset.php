@@ -37,8 +37,8 @@ use yii\web\AssetBundle;
  *          ],
  *      ],
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
@@ -49,6 +49,7 @@ class MapAsset extends AssetBundle
      * @var array
      */
     public $options = [];
+
     /**
      * @inheritdoc
      */
@@ -67,10 +68,10 @@ class MapAsset extends AssetBundle
         $this->options = array_merge($this->options, array_filter([
             'key' => $key,
             'libraries' => $libraries,
-            'language' => $language
-    ]));
+            'language' => $language,
+        ]));
         // BACKWARD COMPATIBILITY
 
-        $this->js[] = '//maps.googleapis.com/maps/api/js?'. http_build_query($this->options);
+        $this->js[] = '//maps.googleapis.com/maps/api/js?' . http_build_query($this->options);
     }
 }

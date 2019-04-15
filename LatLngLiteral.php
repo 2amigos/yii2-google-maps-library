@@ -17,8 +17,8 @@ use yii\web\JsExpression;
  *
  * Google maps LatLngLiteral object
  *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
+ * @author Antonio Ramirez <hola@2amigos.us>
+ *
  * @link http://www.2amigos.us/
  * @package dosamigos\google\maps
  */
