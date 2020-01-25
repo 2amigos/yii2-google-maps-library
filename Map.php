@@ -63,7 +63,7 @@ use yii\web\View;
  * View pegman is dropped on
  * the map. If no panorama is specified, a default StreetViewPanorama will be displayed in the map's div when the pegman
  * is dropped.
- * @property boolean $streetViewControlThe initial enabled/disabled state of the Street View Pegman control. This control
+ * @property boolean $streetViewControl The initial enabled/disabled state of the Street View Pegman control. This control
  * is part of the default UI, and should be set to false when displaying a map type on which the Street View road overlay
  * should not appear (e.g. a non-Earth map type).
  * @property [\doamigos\maps\controls\StreetViewControlOptions] $streetViewControlOptions The initial display options
