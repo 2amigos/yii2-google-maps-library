@@ -31,8 +31,7 @@
         "ext-SimpleXML": "^7.2"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.10@dev",
-        "roave/security-advisories": "dev-master"
+        "friendsofphp/php-cs-fixer": "^2.10@dev"
     },
     "autoload": {
         "psr-4": {
